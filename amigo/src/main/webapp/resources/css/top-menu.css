@@ -71,7 +71,7 @@ main {
 	letter-spacing:4px;
 	color:#b49759;
 }
-#log > i,#join > i{
+#log > i,#join > i,#logout > i, #mypage > i{
 	float:right;
 	line-height: 40px;
     padding: 20px 15px;
@@ -81,7 +81,7 @@ main {
     font-weight: 700;
 }
 
-#search > i:hover,#log > i:hover,#join > i:hover { color: #efa666;  }
+#search > i:hover,#log > i:hover,#join > i:hover ,#logout > i:hover ,#mypage > i:hover { color: #efa666;  }
 #search > i:hover:before{
 	font-family: 'Tangerine', serif; content: "search";
 	font-size: 1.6em;
@@ -93,6 +93,16 @@ main {
 #join > i:hover:before{
 	font-family: 'Tangerine', serif; content: "join"; 
 	font-size: 1.6em;	
+}
+
+#logout > i:hover:before{
+	font-family: 'Tangerine', serif; content: "logout"; 
+	font-size: 1.6em;
+}
+
+#mypage >  i:hover:before{
+	font-family: 'Tangerine', serif; content: "mypage"; 
+	font-size: 1.6em;
 }
 .search_box {
   clear: both;

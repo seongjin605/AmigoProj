@@ -54,7 +54,6 @@ public class LoginController {
 
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("login");
-		mav.addObject("msg","logout");
 		session.invalidate();
 		return mav;
 	}
