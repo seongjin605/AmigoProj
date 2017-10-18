@@ -217,6 +217,12 @@
 			</div>
 		</div>
 	<jsp:include page="footer.jsp"></jsp:include>
+	<style>
+		#footer{
+			top:0;
+			clear:both;
+		}
+	</style>
 	</div>
 </body>
 </html>

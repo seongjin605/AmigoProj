@@ -40,7 +40,7 @@
 
 			<li><a href="#Link" title="Link">고객센터</a>
 				<ul>
-					<li><a href="#Link" title="Link">Q&A</a></li>
+					<li><a href="fre_question.jsp" title="Link">F&Q</a></li>
 					<li><a href="#Link" title="Link">1:1질문</a></li>
 				</ul>
 			</li>

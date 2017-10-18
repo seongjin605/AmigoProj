@@ -1,4 +1,4 @@
-create sequence mvc_board_seq;
+﻿create sequence mvc_board_seq;
 
 
 create table mvc_board(
@@ -10,7 +10,7 @@ bdate date default sysdate,
 bhit number(4) default 0
 )
 
-create table amigo_member2(
+create table amigo_member(
   mid varchar2(20) primary key,
   mpwd varchar2(30) not null,
   mname varchar2(20) not null,
