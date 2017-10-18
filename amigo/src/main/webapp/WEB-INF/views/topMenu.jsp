@@ -3,10 +3,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/top-menu.css"/>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/reset.css" />
+
 <div class="nav_wrapper"> 
     <div class="spinner-master">
 	    <input type="checkbox" id="spinner-form" />
@@ -17,8 +17,10 @@
 	    </label>
  	</div>
 
-  	<a href="index" title="logo" id="logo"><img src="images/Logo5.png" width="120" height="80"></a>
-
+  	<!-- <a href="index" title="logo" id="logo"><img src="images/Logo5.png" width="120" height="80"></a> -->\
+  		<a href="index" title="logo" id="logo">
+  			<h2>amiGo</h2>
+  		</a>
  	    <div class="sub-logo">
 		    <a href="#" class="btn" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
 		    <a href="login" class="btn" id="log"><i class="fa fa-user-o" aria-hidden="true"></i></a>
@@ -30,13 +32,13 @@
       		<li ><a href="#Link" title="Link">동호회</a>
       			<ul>
       				<li><a href="club_make" title="Link">동호회 창설</a>
-      				<li><a href="club" title="Link">동호회 보기</a>
+      				<li><a href="club_board" title="Link">동호회 보기</a>
       			</ul>
       		</li>
-	      
-	      <li ><a href="mainBoard" title="Link">자유게시판</a></li>
-	      
-		<li><a href="#Link" title="Link">고객센터</a>
+
+			<li><a href="mainBoard" title="Link">게시판</a></li>
+
+			<li><a href="#Link" title="Link">고객센터</a>
 				<ul>
 					<li><a href="#Link" title="Link">Q&A</a></li>
 					<li><a href="#Link" title="Link">1:1질문</a></li>

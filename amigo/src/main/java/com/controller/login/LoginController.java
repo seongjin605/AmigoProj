@@ -32,12 +32,14 @@ public class LoginController {
 	public ModelAndView loginCheck(@ModelAttribute MemberDTO memberDTO,HttpSession session) {
 		
 		logger.info("loginCheck.jsp 호출");
-		boolean result=memberService.loginCheck(memberDTO, session);
-		logger.info("result",result);
+		
+		session.setAttribute("id", memberDTO.getMid());
+
 		ModelAndView mav=new ModelAndView();
 		
-		if(result==true) {
+		if(session!=null) {
 			logger.info("Login Success");
+			logger.info("사용자 정보=",memberService.viewMember(memberDTO));
 			mav.setViewName("index");
 		}else {
 		logger.info("Login failure");
@@ -49,10 +51,11 @@ public class LoginController {
 	//로그아웃 처리
 	@RequestMapping("logout")
 	public ModelAndView logout(HttpSession session) {
-		memberService.logout(session);
+
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("login");
 		mav.addObject("msg","logout");
+		session.invalidate();
 		return mav;
 	}
 	@RequestMapping("register")

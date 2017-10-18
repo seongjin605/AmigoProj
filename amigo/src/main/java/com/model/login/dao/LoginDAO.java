@@ -10,6 +10,5 @@ public interface LoginDAO {
 public boolean loginCheck(MemberDTO memberDTO);
 // 회원 로그인 정보
 public MemberDTO viewMember(MemberDTO memberDTO);
-//회원 로그아웃
-public void logout(HttpSession session);
+
 }

@@ -15,14 +15,11 @@ public class LoginServiceImpl implements LoginService {
 	LoginDAO memberDAO;
 	
 	@Override
-	public boolean loginCheck(MemberDTO memberDTO, HttpSession session) {
+	public boolean loginCheck(MemberDTO memberDTO) {
 		// TODO Auto-generated method stub
 		boolean result=memberDAO.loginCheck(memberDTO);
 		if(result) { //true 일경우 세션에 등록
 			MemberDTO memberDTO2=viewMember(memberDTO);
-			//세션 변수 등록
-			session.setAttribute("mid", memberDTO2.getMid());
-			session.setAttribute("mpwd", memberDTO2.getMpwd());
 		}
 		return result;
 	}
@@ -31,14 +28,5 @@ public class LoginServiceImpl implements LoginService {
 	public MemberDTO viewMember(MemberDTO memberDTO) {
 		// TODO Auto-generated method stub
 		return memberDAO.viewMember(memberDTO);
-	}
-
-	@Override
-	public void logout(HttpSession session) {
-		// TODO Auto-generated method stub
-		//세션 변수 개별 삭제
-		//session.removeAttribute("userId");
-		//세션정보초기화
-		session.invalidate();
 	}
 }

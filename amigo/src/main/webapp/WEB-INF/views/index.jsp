@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//liD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.lid">
-
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/index.css"/> 
-
 <script>
 	$(function(){
 		/* $(".parallax-container").parallax({imageSrc:"door.jpg"})  */
@@ -21,7 +19,7 @@
 	    <jsp:include page="topMenu.jsp"></jsp:include>
 		
 		<div id="visualMain">
-			<video style="width:100%;" muted="muted" autoplay loop id="vid"> 
+			<video muted="muted" autoplay loop id="vid"> 
 				<source src="video/timesquare5.mp4" type="video/mp4">
 			</video>
 		</div>
@@ -32,11 +30,12 @@
 				<div class="caption">
 					<h1>Welcome amiGo</h1>
 					<p>
+					${sessionScope.id}님 환영합니다.<br>
 						amiGo 홈페이지에 오신걸 환영합니다.
 						<br>
 						amiGo에서 소중한 사람들과  소중한 취미를 공유하세요.
 						<br>
-						여러분의 시간이 늘 행복하고 소중한 기억들로 가득하기를 바랍니다. 
+		          				여러분의 시간이 늘 행복하고 소중한 기억들로 가득하기를 바랍니다. 
 					</p>
 				</div>
 			</div>	

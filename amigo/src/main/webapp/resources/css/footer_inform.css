@@ -9,16 +9,18 @@
 	margin:0 auto;
 	padding-left: 30px;
 }
+
 .inform_content > h2{
 	font-size: 16px;
 	font-weight: 600;
 	margin-bottom:20px;
-
 }
+
 .inform_box{
 	position:relative;
 	margin-bottom:44px;
 }
+
 .inform_box > h3{
 	padding-bottom:15px;
 	font-size:20px;
@@ -26,6 +28,7 @@
 	color:#1a1a1a;
 	font-family: 'Jeju Gothic', serif;
 }
+
 .inform_box > p{
 	padding-left:20px;
 	margin-bottom:15px;
@@ -36,6 +39,7 @@
 .inform_box > ol{
 	padding-left:20px;
 }
+
 .inform_box > ol > li{
 	line-height: 20px;
 	margin-bottom:10px;

@@ -26,4 +26,5 @@ public class MainController {
 	public void amigoService() throws Exception{
 		logger.info("amigo_service.jsp 요청");
 	}
+	
 }

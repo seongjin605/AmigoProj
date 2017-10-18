@@ -132,7 +132,7 @@
 			})
 			
 			if(i == icons.length )
-				$("#join_second_form").attr("action","join_success.jsp").submit();
+				$("#join_second_form").attr("action","join_success").submit();
 			else
 				alert("모두 올바르게 입력 하셔야 합니다.");
 		})
@@ -141,7 +141,7 @@
 		/* 취소버튼 클릭시 */
 		$("#cancelBtn").click(function(){
 			if(confirm("이 페이지에서 나가시겠습니까?"))
-				$("#join_second_form").attr("action","index.jsp").submit();  
+				$("#join_second_form").attr("action","index").submit();  
 		})
 	})
 	

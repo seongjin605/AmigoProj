@@ -15,12 +15,15 @@
 .container {
 	margin-top: 100px;
 }
+#boardTable {
+	margin-top: 200px;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="topMenu.jsp" />
 
-	<div class="bootstrap-iso">
+	<div class="bootstrap-iso" id="boardTable">
 		<div class="container">
 			<div class="table-responsive">
 				<table class="table">

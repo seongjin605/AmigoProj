@@ -18,4 +18,9 @@ public class ClubController {
 	public void clubMake() throws Exception{
 		logger.info("clubMake.jsp 요청");
 	}
+	
+	@RequestMapping("club_board")
+	public void clubBoard() throws Exception{
+		logger.info("clubBoard.jsp 요청");
+	}
 }

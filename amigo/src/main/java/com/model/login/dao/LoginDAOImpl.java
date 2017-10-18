@@ -28,9 +28,4 @@ public class LoginDAOImpl implements LoginDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("member.viewMember",memberDTO);
 	}
-	@Override
-	public void logout(HttpSession session) {
-		// TODO Auto-generated method stub
-		
-	}
 }
