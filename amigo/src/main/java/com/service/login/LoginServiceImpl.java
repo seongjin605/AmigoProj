@@ -21,8 +21,8 @@ public class LoginServiceImpl implements LoginService {
 		if(result) { //true 일경우 세션에 등록
 			MemberDTO memberDTO2=viewMember(memberDTO);
 			//세션 변수 등록
-/*			session.setAttribute("userId", memberDTO2.getUserId());
-			session.setAttribute("userName", memberDTO2.getUserName());*/
+			session.setAttribute("mid", memberDTO2.getMid());
+			session.setAttribute("mpwd", memberDTO2.getMpwd());
 		}
 		return result;
 	}

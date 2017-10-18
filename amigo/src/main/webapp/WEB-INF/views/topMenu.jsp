@@ -18,6 +18,7 @@
  	</div>
 
   	<a href="index" title="logo" id="logo"><img src="images/Logo5.png" width="120" height="80"></a>
+
  	    <div class="sub-logo">
 		    <a href="#" class="btn" id="search"><i class="fa fa-search" aria-hidden="true"></i></a>
 		    <a href="login" class="btn" id="log"><i class="fa fa-user-o" aria-hidden="true"></i></a>
@@ -26,23 +27,21 @@
  	    
   	<nav id="menu" class="menu">
     	<ul class="dropdown">
-      		<li ><a href="#Link" title="Link">about amiGO</a></li>
-	      
-	      <li ><a href="#Link" title="Link">동호회</a>	
-	        <ul >
-	            <li ><a href="#Link" title="Link ">EWG란?</a></li>
-	            <li ><a href="#Link" title="Link">EWG 등록성분 사용빈도</a></li>
-	        </ul>
-	      </li>
+      		<li ><a href="#Link" title="Link">동호회</a>
+      			<ul>
+      				<li><a href="club_make" title="Link">동호회 창설</a>
+      				<li><a href="club" title="Link">동호회 보기</a>
+      			</ul>
+      		</li>
 	      
 	      <li ><a href="mainBoard" title="Link">자유게시판</a></li>
 	      
-	      <li ><a href="#Link" title="Link">고객센터</a>
-	        <ul >
-	            <li ><a href="#Link" title="Link">자주하는 질문</a></li>
-	            <li ><a href="#Link" title="Link">1:1 질문</a></li>
-	        </ul>
-	      </li>
+		<li><a href="#Link" title="Link">고객센터</a>
+				<ul>
+					<li><a href="#Link" title="Link">Q&A</a></li>
+					<li><a href="#Link" title="Link">1:1질문</a></li>
+				</ul>
+			</li>
 	    </ul>
   	</nav>
   	

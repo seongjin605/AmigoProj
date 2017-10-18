@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.model.member.dto.MemberDTO;
@@ -22,23 +23,25 @@ public class LoginController {
 	//로그인 페이지
 	@RequestMapping("login")
 	public String login() throws Exception{
-		logger.info("login check");
+		logger.info("login.jsp 요청");
 		return "login";
 	}
 
 	//로그인 처리
-	@RequestMapping("loginCheck")
+	@RequestMapping(value="loginCheck",method=RequestMethod.POST)
 	public ModelAndView loginCheck(@ModelAttribute MemberDTO memberDTO,HttpSession session) {
+		
+		logger.info("loginCheck.jsp 호출");
 		boolean result=memberService.loginCheck(memberDTO, session);
+		logger.info("result",result);
 		ModelAndView mav=new ModelAndView();
+		
 		if(result==true) {
 			logger.info("Login Success");
 			mav.setViewName("index");
-			mav.addObject("msg", "success");
 		}else {
-			logger.info("Login failure");
+		logger.info("Login failure");
 			mav.setViewName("login");
-			mav.addObject("msg","failure");
 		}
 		return mav;
 	}

@@ -1,0 +1,25 @@
+create sequence mvc_board_seq;
+
+
+create table mvc_board(
+bid number(4) primary key,
+bname varchar2(20),
+btitle varchar2(100),
+bcontent varchar2(300),
+bdate date default sysdate,
+bhit number(4) default 0
+)
+
+create table amigo_member2(
+  mid varchar2(20) primary key,
+  mpwd varchar2(30) not null,
+  mname varchar2(20) not null,
+  mtel varchar2(30) not null,
+  memail varchar2(50) not null,
+  mgender varchar2(5),
+  mregdate date default sysdate,
+  mage number(3) not null,
+  CONSTRAINT chk_mgender CHECK (mgender IN ('M','W'))
+);
+
+insert into amigo_member(mid,mpwd,mname,mtel,memail,mgender,mage) values('iu','1234','아이유','010-1234-5678','Iu@gmail.net','W',23);
