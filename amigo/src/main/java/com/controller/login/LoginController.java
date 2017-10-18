@@ -23,7 +23,7 @@ public class LoginController {
 	//로그인 페이지
 	@RequestMapping("login")
 	public String login() throws Exception{
-		logger.info("login check");
+		logger.info("login.jsp 요청");
 		return "login";
 	}
 
@@ -31,15 +31,16 @@ public class LoginController {
 	@RequestMapping(value="loginCheck",method=RequestMethod.POST)
 	public ModelAndView loginCheck(@ModelAttribute MemberDTO memberDTO,HttpSession session) {
 		
+		logger.info("loginCheck.jsp 호출");
 		boolean result=memberService.loginCheck(memberDTO, session);
 		logger.info("result",result);
 		ModelAndView mav=new ModelAndView();
 		
 		if(result==true) {
-			/*logger.info("Login Success");*/
+			logger.info("Login Success");
 			mav.setViewName("index");
 		}else {
-		/*	logger.info("Login failure");*/
+		logger.info("Login failure");
 			mav.setViewName("login");
 		}
 		return mav;
