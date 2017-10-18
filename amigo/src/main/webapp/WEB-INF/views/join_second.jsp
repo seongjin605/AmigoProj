@@ -7,6 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Insert title here</title>
+<script src="script/checkEffect.js"></script> 
 <script>
 	$(document).ready(function(){
 		var pwd_check = false;
@@ -62,7 +63,18 @@
 				 successCheckEffect($name_parent);
 		})
 		/*  -------------------- ---------------------------------------- */
-
+		
+		/* 나이 체크  */
+		$("#age").stop().blur(function(){
+			 var age =$(this).val();
+			 var $age_parent = $(this).parent();
+			 
+			 if(age == '' || age < 1 || age > 200)
+				 errorCheckEffect("나이를 올바르게 입력하세요",$age_parent);
+			 else
+				 successCheckEffect($age_parent);
+			 
+		})
 		
 		/* 이메일 처리코드 */
 		$("#first_email").stop().blur(function(){
@@ -76,6 +88,7 @@
 				errorCheckEffect("이메일을 입력하세요",$email_field)
 				
 		})
+		
 
 		$("#last_email").stop().blur(function(){
 			email_check = emailCheck()
@@ -107,6 +120,8 @@
 		})
 		/*  -------------------- ---------------------------------------- */
 		
+		
+		/* 가입버튼 클릭시 */
 		$("#joinBtn").click(function(){
 			var icons = $(".fa");
 			var i = 0;
@@ -117,16 +132,17 @@
 			})
 			
 			if(i == icons.length )
-				$("#join_second_form").attr("action","join_success");
+				$("#join_second_form").attr("action","join_success.jsp").submit();
 			else
 				alert("모두 올바르게 입력 하셔야 합니다.");
 		})
 		
+		
+		/* 취소버튼 클릭시 */
 		$("#cancelBtn").click(function(){
 			if(confirm("이 페이지에서 나가시겠습니까?"))
-				$("#join_second_form").attr("action","index");  
+				$("#join_second_form").attr("action","index.jsp").submit();  
 		})
-		/*  -------------------- ---------------------------------------- */
 	})
 	
 	/* 이메일 체크  */
@@ -184,17 +200,6 @@
 		successCheckEffect($password_parent)
 		return true;
 	}
-	
-	function successCheckEffect($password_parent){
-		$password_parent.children('.input_check').text("")
-		$password_parent.children('.fa').addClass('view');
-	}
-	
-	function errorCheckEffect(str,$password_parent){
-		
-		$password_parent.children('.fa').removeClass('view');
-		$password_parent.children('.input_check').text(str).css("color","red");
-	}
 </script>
 <style>
 	@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
@@ -235,14 +240,16 @@
 		font-size: 16px;
 		border:1px solid rgba(0,0,0,.2);
 	}
+	
 	input[type="password"] {
 		font-family: sans-serif !important;
 		font-weight: bold;
 	}
-	#join_second_form > div.join_row:nth-child(6) > input{
+	
+	#join_second_form > div.join_row:nth-child(7) > input{
 		width:100px;
 	}
-	#join_second_form > div.join_row:nth-child(5) > input{
+	#join_second_form > div.join_row:nth-child(6) > input{
 		width:160px;
 	}
 	
@@ -279,35 +286,13 @@
 		display: inline-block;
 	}
 	
-	.link_group{
-		margin-top:20px;
-		text-align: center;
-	}
-	
-	.link_group > .link{
-		margin-right:20px;
-		padding-top:10px;
-		display: inline-block;
-		width:120px;
-		height:40px;
-		font-weight:bold;
-		text-decoration: none;
-		color:rgba(100,80,250,.6);
-		border:1px solid rgba(100,80,250,.6); 
-	}
-	.link_group > .link:hover{
-		cursor: pointer;
-	}
-	
-	
-	
 	.submit_group{
 		margin-top:20px;
 		margin-bottom:40px;
 		text-align: center;
 	}
 	 
-	.submit_group > input[type="submit"]{
+	.submit_group > input[type="button"]{
 		margin:10px auto;
 		width: 20%;
 		height: 70px;
@@ -318,7 +303,7 @@
 		background-color: rgba(0,0,0,.8);
 	}
 	
-	input[type='submit']:hover{
+	input[type='button']:hover{
 		cursor: pointer;
 	}
 	
@@ -360,7 +345,7 @@
 			</div>
 			
 			<div id="pwd_check_field" class="join_row">
-				<label for="pwd_check">비밀번호재확인 </label>
+				<label for="pwd_check">비밀번호 재확인 </label>
 				<input type="password" id="pwd_check" name="pwd_check" placeholder="패스워드 재확인">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
@@ -369,6 +354,13 @@
 			<div id="name_field" class="join_row">
 				<label for="name">이름 </label>
 				<input type="text" id="name" name="mname" placeholder="이름 입력">
+				<span class="input_check"></span>
+				<i class="fa fa-check" aria-hidden="true"></i>
+			</div>
+			
+				<div id="age_field" class="join_row">
+				<label for="age">나이</label>
+				<input type="text" id="age" name="mage" placeholder="나이 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
@@ -405,11 +397,6 @@
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
-<!-- 			<div class="link_group">
-				<a class="link" id="agree_link">가입</a>
-				
-			</div> -->
-			<input type="hidden" name="mage" value="23">
 			<div class="submit_group">
 				<input type="submit" id="joinBtn" value="가입">
 				<input type="submit" id="cancelBtn" value="취소">

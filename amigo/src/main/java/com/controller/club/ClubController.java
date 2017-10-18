@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ClubController {
 	private static final Logger logger=LoggerFactory.getLogger(ClubController.class);
 	
-	@RequestMapping("clubMain")
+	@RequestMapping("club")
 	public void clubMain() throws Exception{
 		logger.info("check");
+	}
+	
+	@RequestMapping("club_make")
+	public void clubMake() throws Exception{
+		logger.info("clubMake.jsp 요청");
 	}
 }
