@@ -4,12 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://formden.com/static/cdn/bootstrap-iso.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <title>자유 게시판</title>
 
 <script>
@@ -83,7 +80,7 @@
 										<!-- **현재페이지이면 하이퍼링크 제거 -->
 										<c:choose>
 											<c:when test="${num == map.boardPager.curPage}">
-												<li><span style="color: red">${num}</span>
+												<li class="active"><span aria-hidden="true">${num}</span>
 												<li>
 											</c:when>
 											<c:otherwise>
