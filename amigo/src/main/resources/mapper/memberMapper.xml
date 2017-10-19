@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="member">
     
     <select id="loginCheck" resultType="String">
-        SELECT mid 
+        SELECT mid,mpwd 
         FROM amigo_member
         WHERE mid = #{mid} AND mpwd = #{mpwd}
     </select>
@@ -28,4 +28,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         VALUES 
             (#{mid}, #{mpwd}, #{mname}, #{mtel},#{memail},#{mgender},#{mage})    
     </insert>
+    
+    <select id="memberInfo" resultType="String">
+    SELECT mpwd
+    FROM amigo_member
+    WHERE mpwd=#{mpwd}
+    </select>
 </mapper>

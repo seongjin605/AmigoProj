@@ -10,7 +10,10 @@
 <link rel="stylesheet" type="text/css"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/reset.css" />
-
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+	<link rel="stylesheet"
+	href="https://formden.com/static/cdn/bootstrap-iso.css">
 <div class="nav_wrapper">
 	<div class="spinner-master">
 		<input type="checkbox" id="spinner-form" /> <label for="spinner-form"
@@ -22,27 +25,31 @@
 	</div>
 
 	<!-- <a href="index" title="logo" id="logo"><img src="images/Logo5.png" width="120" height="80"></a> -->
-	\ <a href="index" title="logo" id="logo">
+	<a href="index" title="logo" id="logo">
 		<h2>amiGo</h2>
 	</a>
 	<div class="sub-logo">
 		<a href="#" class="btn" id="search"><i class="fa fa-search"
 			aria-hidden="true"></i></a>
 		<c:choose>
-			<c:when test="${empty sessionScope.id}">
-				<a href="login" class="btn" id="log"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+			<c:when test="${empty sessionScope.id && empty sessionScope.pwd}">
+				<a href="login" class="btn" id="log"><i class="fa fa-user-o"
+					aria-hidden="true"></i></a>
 			</c:when>
 			<c:otherwise>
-				<a href="logout" class="btn" id="logout"><i class="fa fa-user-times" aria-hidden="true"></i></a>
+				<a href="logout" class="btn" id="logout"><i
+					class="fa fa-user-times" aria-hidden="true"></i></a>
 			</c:otherwise>
 		</c:choose>
 
 		<c:choose>
-			<c:when test="${empty sessionScope.id}">
-				<a href="login" class="btn" id="join"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+			<c:when test="${empty sessionScope.id && empty sessionScope.pwd}">
+				<a href="login" class="btn" id="join"><i class="fa fa-user-plus"
+					aria-hidden="true"></i></a>
 			</c:when>
 			<c:otherwise>
-				<a href="club" class="btn" id="mypage"><i class="fa fa-address-card" aria-hidden="true"></i></a>
+				<a href="#myModal" class="btn" id="mypage"><i
+					class="fa fa-address-card" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i></a>
 			</c:otherwise>
 		</c:choose>
 	</div>
@@ -73,5 +80,64 @@
 </div>
 <script src="script/script.js"></script>
 
+<div class="bootstrap-iso">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding: 35px 50px;">
+					<button type="button" class="close" data-dismiss="modal">
+					<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+					</button>
+					<h4>
+						<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+						 마이 페이지
+					</h4>
+				</div>
+				<div class="modal-body" style="padding: 40px 50px;">
+					<form role="form" method="post" action="memberInfoCheck">
+						<div class="form-group">
+							<label for="psw"><i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+							비밀번호</label> <input
+								type="password" class="form-control" id="psw"
+								placeholder="비밀번호를 입력하세요.">
+						</div>
+						<button type="submit" class="btn btn-success btn-block btn-sm">
+							<i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i>
+							 확인
+						</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default"
+						data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i> 취소
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
+<script>
+$(document).ready(function(){
+    $("#mypage").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+<style>
+.modal-header, h4, .close {
+	background-color: #337ab7;
+	color: white !important;
+	text-align: center;
+	font-size: 30px;
+}
+
+.modal-footer {
+	background-color: white;
+}
+</style>
 

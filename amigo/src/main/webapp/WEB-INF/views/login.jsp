@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<title>Insert title here</title>
+<title>로그인</title>
 <script>
 	$(document).ready(function(){
 		$("#loginBtn").click(function(){
@@ -179,11 +179,11 @@ input:-webkit-autofill {
 					<h2>LOGIN</h2>
 					<div id="id_div" class="login_row">
 						<label for="mid">아이디 </label> 
-						<input type="text" name="mid">
+						<input type="text" id="mid" name="mid">
 					</div>
 					<div id="pwd_div" class="login_row">
 						<label for="pwd">패스워드 </label> 
-						<input type="password" name="mpwd">
+						<input type="password" id="mpwd" name="mpwd">
 					</div>
 			
 					<div class="submit_group">

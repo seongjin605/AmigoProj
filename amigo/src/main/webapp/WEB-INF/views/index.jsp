@@ -3,8 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//liD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.lid">
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://formden.com/static/cdn/bootstrap-iso.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/index.css"/> 
+
 <script>
 	$(function(){
 		/* $(".parallax-container").parallax({imageSrc:"door.jpg"})  */

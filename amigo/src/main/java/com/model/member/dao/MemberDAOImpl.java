@@ -18,5 +18,11 @@ public class MemberDAOImpl implements MemberDAO {
 		// TODO Auto-generated method stub
 		sqlSession.insert("member.insertMember",memberDTO);
 	}
-
+	
+	@Override
+	public boolean passwordCheck(MemberDTO memberDTO) {
+		// TODO Auto-generated method stub
+		String password=sqlSession.selectOne("member.memberInfo",memberDTO);
+		return (password==null) ? false:true;
+	}
 }

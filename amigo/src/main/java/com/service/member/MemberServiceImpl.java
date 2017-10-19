@@ -18,5 +18,10 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		memberDAO.register(memberDTO);
 	}
-
+	
+	@Override
+	public boolean passwordCheck(MemberDTO memberDTO) {
+		// TODO Auto-generated method stub
+		return memberDAO.passwordCheck(memberDTO);
+	}
 }
