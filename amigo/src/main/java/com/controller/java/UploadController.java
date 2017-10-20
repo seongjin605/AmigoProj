@@ -1,4 +1,4 @@
-package com.controller.upload;
+package com.controller.java;
 
 import java.io.File;
 import java.io.FileInputStream;

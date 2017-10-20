@@ -1,4 +1,4 @@
-package com.controller.club;
+package com.controller.java;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

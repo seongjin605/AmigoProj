@@ -1,4 +1,4 @@
-package com.controller.login;
+package com.controller.java;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;

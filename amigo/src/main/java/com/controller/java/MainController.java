@@ -1,4 +1,4 @@
-package com.controller.main;
+package com.controller.java;
 
 import javax.inject.Inject;
 
