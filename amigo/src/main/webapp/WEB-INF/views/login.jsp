@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,16 +23,16 @@
         $("#loginBtn").click(function(){
             // 태크.val() : 태그에 입력된 값
             // 태크.val("값") : 태그의 값을 변경 
-            var userId = $("#midInput").val();
-            var userPw = $("#mpwdInput").val();
+            var userId = $("#mid").val();
+            var userPw = $("#mpwd").val();
             if(userId == ""){
                 alert("아이디를 입력하세요.");
-                $("#midInput").focus(); // 입력포커스 이동
+                $("#mid").focus(); // 입력포커스 이동
                 return; // 함수 종료
             }
             if(userPw == ""){
                 alert("패스워드를 입력하세요.");
-                $("#mpwdInput").focus();
+                $("#mpwd").focus();
                 return;
             }
             // 폼 내부의 데이터를 전송할 주소
@@ -179,11 +179,11 @@ input:-webkit-autofill {
 					<h2>LOGIN</h2>
 					<div id="id_div" class="login_row">
 						<label for="mid">아이디 </label> 
-						<input type="text" id="midInput" name="mid">
+						<input type="text" id="mid" name="mid">
 					</div>
 					<div id="pwd_div" class="login_row">
-						<label for="mpwd">패스워드 </label> 
-						<input type="password" id="mpwdInput" name="mpwd">
+						<label for="pwd">패스워드 </label> 
+						<input type="password" id="mpwd" name="mpwd">
 					</div>
 			
 					<div class="submit_group">

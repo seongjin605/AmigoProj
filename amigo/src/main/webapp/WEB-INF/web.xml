@@ -44,4 +44,11 @@
 		<filter-name>encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- welcome -->
+	<welcome-file-list>
+		<welcome-file>
+			welcome.jsp
+		</welcome-file>
+	</welcome-file-list>
 </web-app>

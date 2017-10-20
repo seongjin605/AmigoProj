@@ -1,7 +1,10 @@
 package com.service.login;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Service;
+
 import com.model.login.dao.LoginDAO;
 import com.model.member.dto.MemberDTO;
 

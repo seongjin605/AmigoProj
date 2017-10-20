@@ -22,21 +22,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public boolean passwordCheck(MemberDTO memberDTO) {
 		// TODO Auto-generated method stub
-
-		boolean result=memberDAO.passwordCheck(memberDTO);
-		if(result) { //true 일경우 세션에 등록
-			MemberDTO memberDTO3=viewMember(memberDTO);
-		}
-		return result;
-	}
-	@Override
-	public MemberDTO viewMember(MemberDTO memberDTO) {
-		// TODO Auto-generated method stub
-		return memberDAO.viewMember(memberDTO);
-	}
-	@Override
-	public String checkMidDTO(String mid) {
-		// TODO Auto-generated method stub
-		return  memberDAO.checkMidDTO(mid);
+		return memberDAO.passwordCheck(memberDTO);
 	}
 }
