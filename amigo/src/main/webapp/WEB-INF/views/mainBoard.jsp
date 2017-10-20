@@ -120,13 +120,13 @@
 					<select class="form-control">
 						<!-- 검색조건을 검색처리후 결과화면에 보여주기위해  c:out 출력태그 사용, 삼항연산자 -->
 						<option value="all"
-							<c:out value="${map.searchOption == 'all'?'selected':''}"/>> 전체(이름+내용+제목)</option>
+							<c:out value="${map.searchOption eq 'all'?'selected':''}"/>> 전체(이름+내용+제목)</option>
 						<option value="bname"
-							<c:out value="${map.searchOption == 'bname'?'selected':''}"/>> 이름</option>
+							<c:out value="${map.searchOption eq 'bname'?'selected':''}"/>> 이름</option>
 						<option value="bcontent"
-							<c:out value="${map.searchOption == 'bcontent'?'selected':''}"/>> 내용</option>
+							<c:out value="${map.searchOption eq 'bcontent'?'selected':''}"/>> 내용</option>
 						<option value="btitle"
-							<c:out value="${map.searchOption == 'btitle'?'selected':''}"/>> 제목</option>
+							<c:out value="${map.searchOption eq 'btitle'?'selected':''}"/>> 제목</option>
 					</select> <input class="form-control" name="keyword" value="${map.keyword}">
 					<input class="btn btn-primary" type="submit" value="검색">
 					<a class="btn btn-primary" href="write_view">글쓰기</a>

@@ -115,18 +115,22 @@
 	<!-- sql code 조각 -->
 	<!-- 반복되는 sql의 일부를 sql태그를 이용해서 따로 저장(include 태그에 넣기위함) -->
 	<sql id="search">
-		<choose>
-			<!-- 전체 검색 -->
-			<when test="searchOption =='all'">
+		<!-- 검색 -->
+			<if test="searchOption =='all'">
 				WHERE bname like '%'||#{keyword}||'%'
 					OR bcontent like '%'||#{keyword}||'%'
 					OR btitle like '%'||#{keyword}||'%'
-			</when>
-			<!-- 전체 검색이아닌 상세 검색 -->
-			<otherwise>
-				WHERE #{searchOption} like '%'||#{keyword}||'%' 
-			</otherwise>
-		</choose>
+			</if>
+			<if test="searchOption =='bname'">
+				WHERE bname like '%'||#{keyword}||'%'
+			</if>
+			<if test="searchOption =='bcontent'">
+				WHERE bcontent like '%'||#{keyword}||'%'
+			</if>
+			<if test="searchOption =='btitle'">
+				WHERE btitle like '%'||#{keyword}||'%'
+			</if>
+
 	</sql>
 	
 	<!-- 페이징 sql -->
