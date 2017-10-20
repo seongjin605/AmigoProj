@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="script/checkEffect.js"></script>
 <title>Insert title here</title>
 <script>
@@ -59,124 +60,132 @@
 		 else
 			 successCheckEffect($sel_parent);
 	}
+	function addFilePath(msg) {
+		alert(msg);
+		document.getElementById("form1").reset();
+	}
 </script>
 <style>
-	@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-	#container{
-		margin:0;
-		padding:0;
-		font-family: 'Jeju Gothic', serif;
-	}
-	
-	#section{
-		padding-top: 200px;
-		padding-bottom: 120px;
-		text-align: center;
-		background-image: url(images/club_form.jpg);
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat; 
-/* 		width:100%;
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+#container {
+	margin: 0;
+	padding: 0;
+	font-family: 'Jeju Gothic', serif;
+}
+
+#section {
+	padding-top: 200px;
+	padding-bottom: 120px;
+	text-align: center;
+	background-image: url(images/club_form.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* 		width:100%;
 		height:100%; */
-	}
-	
-	#section > h3 {
-		font-size: 45px;
-		font-weight: bold;
-		margin-bottom: 40px;
-		color: white
-	}
-	
-	#club_form{
-		margin:0 auto;
-		padding:40px;
-		width:850px;
-		text-align:left;
-		border:1px solid rgba(0,0,0,.2);
-		background-color: rgba(250,250,250,.9);
-	}
-	
-	#club_form > .club_row{
-		margin-bottom: 30px;
-		padding:40px;
-		border-bottom: 1px solid rgba(0,0,0,.2);
-	}
-	
-	#club_form > .club_row > label{
-		display: inline-block;
-		width: 190px;
-		font-size: 20px;
-		
-	}
-	
-	#club_form > .club_row > input{
-		width:300px;
-		height:30px;
-		font-family: 'Jeju Gothic', serif;
-	}
-	
-	#club_form > .club_row > select{
-		width:100px;
-		height:30px;
-	}
-	.submit_group{
-		margin-top:20px;
-		margin-bottom:40px;
-		text-align: center;
-	}
-	
-	.submit_group > input[type="button"]{
-		margin:10px auto;
-		width: 20%;
-		height: 70px;
-		font-size: 20px;
-		font-weight: bold;
-		color: white;
-		border: none;
-		background-color: rgba(0,0,0,.8);
-	}
-	
-	input[type='button']:hover{
-		cursor: pointer;
-	}
-	
-	.view{
-		display: inline-block;
-	}
+}
+
+#section>h3 {
+	font-size: 45px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	color: white
+}
+
+#club_form {
+	margin: 0 auto;
+	padding: 40px;
+	width: 850px;
+	text-align: left;
+	border: 1px solid rgba(0, 0, 0, .2);
+	background-color: rgba(250, 250, 250, .9);
+}
+
+#club_form>.club_row {
+	margin-bottom: 30px;
+	padding: 40px;
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+#club_form>.club_row>label {
+	display: inline-block;
+	width: 190px;
+	font-size: 20px;
+}
+
+#club_form>.club_row>input {
+	width: 300px;
+	height: 30px;
+	font-family: 'Jeju Gothic', serif;
+}
+
+#club_form>.club_row>select {
+	width: 100px;
+	height: 30px;
+}
+
+.submit_group {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.submit_group>input[type="button"] {
+	margin: 10px auto;
+	width: 20%;
+	height: 70px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	border: none;
+	background-color: rgba(0, 0, 0, .8);
+}
+
+input[type='button']:hover {
+	cursor: pointer;
+}
+
+.view {
+	display: inline-block;
+}
+iframe {
+	width: 0px;
+	height: 0px;
+	border: 0px
+}
 </style>
 </head>
 <body>
 	<div id="container">
-		<jsp:include page="topMenu.jsp"></jsp:include> 
+		<jsp:include page="topMenu.jsp"></jsp:include>
 
-		<div id="section">		
+		<div id="section">
 			<h3>동호회 만들기</h3>
 			<div id="article">
 				<form method="post" action="" id="club_form">
 					<span>*모두 빠짐없이 입력하셔야 합니다.</span>
 					<div id="title_field" class="club_row">
-						<label for="title">동호회 제목 </label>
-						<input type="text" id="title" name="ctitle" placeholder="동호회제목 입력(2자이상)">
-						<span class="input_check"></span>
-						<i class="fa fa-check ch" aria-hidden="true"></i>						
+						<label for="title">동호회 제목 </label> <input type="text" id="title"
+							name="ctitle" placeholder="동호회제목 입력(2자이상)"> <span
+							class="input_check"></span> <i class="fa fa-check ch"
+							aria-hidden="true"></i>
 					</div>
-					
+
 					<div id="content_field" class="club_row">
-						<label for="content">동호회 소개글 </label>
-						<input type="text" id="content" name="ccontent" placeholder="소개글 입력(5자이상)">
-						<span class="input_check"></span>	
-						<i class="fa fa-check ch" aria-hidden="true"></i>					
+						<label for="content">동호회 소개글 </label> <input type="text"
+							id="content" name="ccontent" placeholder="소개글 입력(5자이상)">
+						<span class="input_check"></span> <i class="fa fa-check ch"
+							aria-hidden="true"></i>
 					</div>
-					
+
 					<div id="cpic_field" class="club_row">
-						<label for="cpic">동호회 대표사진 </label>
-						<input type="file" id="cpic" name="cpic" value="사진" >
-						<span class="input_check"></span>						
+						<label for="cpic">동호회 대표사진 </label> <input type="file" id="cpic"
+							name="cpic" value="사진"> <span class="input_check"></span>
 					</div>
-				
+
 					<div id="area_field" class="club_row">
-						<label for="area">활동 지역</label>
-						<select name="carea" id="area">
+						<label for="area">활동 지역</label> <select name="carea" id="area">
 							<option value="seoul" selected>서울</option>
 							<option value="incheon">인천</option>
 							<option value="daejun">대전</option>
@@ -184,13 +193,11 @@
 							<option value="daegu">대구</option>
 							<option value="gwangju">광주</option>
 							<option value="ulsan">울산</option>
-						</select>
-						<span class="input_check"></span>				
+						</select> <span class="input_check"></span>
 					</div>
-					
+
 					<div id="hobby_field" class="club_row">
-						<label for="hobby">관심사</label>
-						<select name="chobby" id="hobby">
+						<label for="hobby">관심사</label> <select name="chobby" id="hobby">
 							<option value="nature" selected>자연</option>
 							<option value="tour">여행</option>
 							<option value="car">자동차</option>
@@ -211,18 +218,22 @@
 							<option value="picture">사진</option>
 							<option value="reading">독서</option>
 							<option value="etc">기타</option>
-						</select>
-						<span class="input_check"></span>
-						
+						</select> <span class="input_check"></span>
+
 					</div>
 					<div class="submit_group">
-						<input type="button" id="joinBtn" value="가입">
-						<input type="button" id="cancelBtn" value="취소">
+						<input type="button" id="joinBtn" value="가입"> <input
+							type="button" id="cancelBtn" value="취소">
 					</div>
 				</form>
 			</div>
 		</div>
-	<jsp:include page="footer.jsp"></jsp:include>
+		<form id='form1' action="uploadForm" method="post"
+			enctype="multipart/form-data" target="zeroFrame">
+			<input type='file' name='file'> <input type='submit'>
+		</form>
+			<iframe name="zeroFrame"></iframe>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>
