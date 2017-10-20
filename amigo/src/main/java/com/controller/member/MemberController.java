@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.model.member.dto.MemberDTO;
@@ -29,6 +31,15 @@ public class MemberController {
 	public void joinFirst() {
 		logger.info("join_first.jsp 요청");
 	}
+	//로그인 아이디 체크
+	@RequestMapping(value = "join_second2" , method=RequestMethod.POST)
+	@ResponseBody 
+	public String duplicationCheck(@RequestParam String mid) throws Exception {
+		logger.info("join_second실행!"+mid);
+		String result = memberService.checkMidDTO(mid);
+		return result;
+	}
+		
 
 	// 회원 등록
 	@RequestMapping(value = "join_second", method = RequestMethod.GET)

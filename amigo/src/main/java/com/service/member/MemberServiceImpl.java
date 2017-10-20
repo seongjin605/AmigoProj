@@ -34,4 +34,9 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return memberDAO.viewMember(memberDTO);
 	}
+	@Override
+	public String checkMidDTO(String mid) {
+		// TODO Auto-generated method stub
+		return  memberDAO.checkMidDTO(mid);
+	}
 }

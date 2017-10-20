@@ -1,30 +1,85 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Insert title here</title>
 <script src="script/checkEffect.js"></script> 
 <script>
+/* $(function(){ 
+$("#id").keyup(function() {
+	$.ajax({
+		url : "join_second2",
+		type : "post",
+		data : $("form").serialize(),
+		success : function(data) {
+			console.log(data);
+			if (data.length > 0) {
+			document.getElementById("id_output").text = "이미 해당 아이디로 가입된 회원가 있습니다.";
+			} else {
+				if ($("#id").val().length < 5) {
+				document.getElementById("id_output").text = "아이디를 5자 이상 입력해주세요.";
+				} else {
+					document.getElementById("id_output").text = "사용 가능한 아이디입니다.";
+				}
+			}
+		}
+ 		error : function(error) {
+			alert(error.statusText);
+		} 
+	});
+
+	return false;
+})
+}); */
+//-------------------------------------------------------------------------
 	$(document).ready(function(){
 		var pwd_check = false;
 		var email_check = false;
 
 		
-		/* 아이디체크 */
-		$("#id").stop().blur(function(){
+		/* 추가 ajax 아이디 체크 부분 */
+		$("#mid").keyup(function(){
 			 var id =$(this).val();
 			 var $id_parent = $(this).parent();
+		
+	
+		
+			$.ajax({
+				url : "join_second2",
+				type : "post",
+				dataType:"json",
+				data : $("#join_second_form").serialize(),
+				success : function(data) {
+
+			
+			 		if (data==false) {
+					$("#id_output").text("중복된 아이디입니다..");
+					
+					}  else if(data == true) {
+						if ($("#mid").val().length < 5) {
+						
+							$("#id_output").text ("아이디를 5자 이상 입력해주세요.");
+						} else {
+							$("#id_output").text("사용 가능한 아이디입니다.");
+						}
+					}  
+					
+				},  error:function(request,status,error){
+			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			       }
+			})
 			 
+			 /* ajax 아이디 체크 부분 끝 */
 			 if(id == '')
 				 errorCheckEffect("이름을 입력하세요",$id_parent);
 			 else
 				 successCheckEffect($id_parent);
 		})
 		/*  -------------------- ---------------------------------------- */
-		
 		
 		/* 비밀번호 체크  */
 		$("#pwd").stop().blur(function(){
@@ -131,7 +186,7 @@
 			})
 			
 			if(i == icons.length )
-				$("#join_second_form").attr("action","join_success.jsp").submit();
+				$("#join_second_form").attr("action","join_success").submit();
 			else
 				alert("모두 올바르게 입력 하셔야 합니다.");
 		})
@@ -140,7 +195,7 @@
 		/* 취소버튼 클릭시 */
 		$("#cancelBtn").click(function(){
 			if(confirm("이 페이지에서 나가시겠습니까?"))
-				$("#join_second_form").attr("action","index.jsp").submit();  
+				$("#join_second_form").attr("action","index").submit();  
 		})
 	})
 	
@@ -328,23 +383,26 @@
 	<%@ include file="join_header.jsp" %>
 	<div id="container">
 		<h3>기본정보입력</h3>
-		<form method="post" action="" id="join_second_form">
+		<form method="post" id="join_second_form">
 			<div id="id_field" class="join_row">
 				<label for="id">아이디 </label>
-				<input type="text" id="id" name="id" placeholder="ID를 입력">
+				<input type="text" id="mid" name="mid" placeholder="ID를 입력">
 				<span class="input_check"></span>
-				<i class="fa fa-check" aria-hidden="true"></i>
+				<i class="fa fa-check" aria-hidden="true"></i><p>
+				<!-- 아이디 입력 구문 헬퍼 -->
+				<span id="id_output"></span>
+				
 			</div>
 			
 			<div id="pwd_field" class="join_row">
 				<label for="pwd">비밀번호 </label>
-				<input type="password" id="pwd" name="pwd" placeholder="영문,숫자,특수문자혼합하여 8~20자리입력">
+				<input type="password" id="pwd" name="mpwd" placeholder="영문,숫자,특수문자혼합하여 8~20자리입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
 			<div id="pwd_check_field" class="join_row">
-				<label for="pwd_check">비밀번호재확인 </label>
+				<label for="pwd_check">비밀번호 재확인 </label>
 				<input type="password" id="pwd_check" name="pwd_check" placeholder="패스워드 재확인">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
@@ -352,21 +410,21 @@
 			
 			<div id="name_field" class="join_row">
 				<label for="name">이름 </label>
-				<input type="text" id="name" name="name" placeholder="이름 입력">
+				<input type="text" id="name" name="mname" placeholder="이름 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
-			<div id="age_field" class="join_row">
+				<div id="age_field" class="join_row">
 				<label for="age">나이</label>
-				<input type="text" id="age" name="age" placeholder="나이 입력">
+				<input type="text" id="age" name="mage" placeholder="나이 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
 			
 			<div id="gender_field" class="join_row">
 				<label for="gender_box">성별 </label>
-				<select name="gender_box" id="gender_box">
+				<select name="mgender" id="gender_box">
 					<option value="M">남자</option>
 					<option value="W">여자</option>
 				</select>
@@ -376,7 +434,7 @@
 				<label for="email">이메일</label>
 				<input type="text" id="first_email" name="first_email" placeholder="이메일 ID">@
 				<input type="text" id="last_email" name="last_email" placeholder="직접입력">
-				<select name="email_box" id="email_box">
+				<select name="memail" id="email_box">
 					<option value="empty" selected>직접입력</option>
 					<option value="naver.com">naver.com</option>
 					<option value="daum.net">daum.net</option>
@@ -391,14 +449,14 @@
 			
 			<div id="tel_field" class="join_row">
 				<label for="tel">전화번호</label>
-				<input type="text" id="tel" name="tel" placeholder="'-'를 제외하고 입력하세요">
+				<input type="text" id="tel" name="mtel" placeholder="'-'를 제외하고 입력하세요">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>
-
+			
 			<div class="submit_group">
-				<input type="button" id="joinBtn" value="가입">
-				<input type="button" id="cancelBtn" value="취소">
+				<input type="submit" id="joinBtn" value="가입">
+				<input type="submit" id="cancelBtn" value="취소">
 			</div>
 		</form>
 	</div>

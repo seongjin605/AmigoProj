@@ -29,4 +29,15 @@ public class MemberDAOImpl implements MemberDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("member.viewMember",memberDTO);
 	}
+	@Override
+	public String checkMidDTO(String mid) {
+		// TODO Auto-generated method stub
+		int result =  sqlSession.selectOne("IdCheck",mid);
+		if(result==0) {
+			return "true";
+		}else if(result>=1) {
+			return "false";
+		}
+		return "false";
+	}
 }
