@@ -52,7 +52,7 @@ main {
   position:relative;
   float: right;
   font-size: 23px;
-  padding: 20px 15px;
+  padding: 40px 15px;
   line-height: 40px;
   color: #fff;
   margin: 0;
@@ -74,7 +74,7 @@ main {
 #log > i,#join > i,#logout > i, #mypage > i{
 	float:right;
 	line-height: 40px;
-    padding: 20px 15px;
+    padding: 40px 15px;
     font-size: 23px; 
 	color: #fff;
 	margin: 0;
@@ -194,7 +194,7 @@ main {
 }
 
 .menu ul li > a { 
-	padding: 32px;   
+	padding: 50px;   
 	color: white;
 }
 

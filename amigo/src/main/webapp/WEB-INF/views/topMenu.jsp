@@ -59,7 +59,7 @@
 			<li><a href="#Link" title="Link">동호회</a>
 				<ul>
 					<li><a href="club_make" title="Link">동호회 창설</a>
-					<li><a href="club_board" title="Link">동호회 보기</a>
+					<li><a href="clubMain" title="Link">동호회 보기</a>
 				</ul></li>
 
 			<li><a href="mainBoard" title="Link">게시판</a></li>
@@ -67,7 +67,7 @@
 			<li><a href="#Link" title="Link">고객센터</a>
 				<ul>
 					<li><a href="#Link" title="Link">Q&A</a></li>
-					<li><a href="qna" title="Link">1:1질문</a></li>
+					<li><a href="#Link" title="Link">1:1질문</a></li>
 				</ul></li>
 		</ul>
 	</nav>
@@ -96,14 +96,14 @@
 					</h4>
 				</div>
 				<div class="modal-body" style="padding: 40px 50px;">
-					<form role="form" method="post" action="memberInfoCheck">
+					<form name="form1" role="form" method="post" action="memberInfoCheck" id="memInfo">
 						<div class="form-group">
 							<label for="psw"><i class="fa fa-lock fa-lg" aria-hidden="true"></i>
 							비밀번호</label> <input
-								type="password" class="form-control" id="psw"
+								type="password" class="form-control" id="mpwd" name="mpwd"
 								placeholder="비밀번호를 입력하세요.">
 						</div>
-						<button type="submit" class="btn btn-success btn-block btn-sm">
+						<button type="submit" id="pwdCheckBtn" class="btn btn-success btn-block btn-sm">
 							<i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i>
 							 확인
 						</button>
@@ -124,6 +124,29 @@
 $(document).ready(function(){
     $("#mypage").click(function(){
         $("#myModal").modal();
+    });
+});
+
+$(document).ready(function(){
+	$("#pwdCheckBtn").click(function(){
+		$("#memInfo").attr("action","memberInfoCheck").submit();	
+	})
+})
+
+    $(document).ready(function(){ 
+    $("#pwdCheckBtn").click(function(){
+        // 태크.val() : 태그에 입력된 값
+        // 태크.val("값") : 태그의 값을 변경 
+        var userPw = $("#mpwd").val();
+        if(userPw == ""){
+            alert("패스워드를 입력하세요.");
+            $("#mpwd").focus();
+            return;
+        }
+        // 폼 내부의 데이터를 전송할 주소
+        document.form1.action="${path}/memberInfoCheck"
+        // 제출
+        document.form1.submit();
     });
 });
 </script>

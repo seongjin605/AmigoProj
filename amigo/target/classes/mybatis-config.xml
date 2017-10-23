@@ -6,6 +6,5 @@
 	<typeAliases>
 		<typeAlias alias="boardDTO" type="com.model.board.dto.BoardDTO" />
 		<typeAlias alias="memberDTO" type="com.model.member.dto.MemberDTO" />
-		<typeAlias alias="qnaDTO" type="com.model.qna.dto.QnADTO"/>
 	</typeAliases>
 </configuration>
