@@ -44,7 +44,7 @@
 
 		<c:choose>
 			<c:when test="${empty sessionScope.id && empty sessionScope.pwd}">
-				<a href="login" class="btn" id="join"><i class="fa fa-user-plus"
+				<a href="join_first" class="btn" id="join"><i class="fa fa-user-plus"
 					aria-hidden="true"></i></a>
 			</c:when>
 			<c:otherwise>

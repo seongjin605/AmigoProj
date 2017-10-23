@@ -31,15 +31,15 @@ public class MemberController {
 	public void joinFirst() {
 		logger.info("join_first.jsp 요청");
 	}
-	//로그인 아이디 체크
-	@RequestMapping(value = "join_second2" , method=RequestMethod.POST)
-	@ResponseBody 
+
+	// 로그인 아이디 체크
+	@RequestMapping(value = "join_second2", method = RequestMethod.POST)
+	@ResponseBody
 	public String duplicationCheck(@RequestParam String mid) throws Exception {
-		logger.info("join_second실행!"+mid);
+		logger.info("join_second실행!" + mid);
 		String result = memberService.checkMidDTO(mid);
 		return result;
 	}
-		
 
 	// 회원 등록
 	@RequestMapping(value = "join_second", method = RequestMethod.GET)
@@ -56,13 +56,13 @@ public class MemberController {
 		return "join_success";
 	}
 
-	/*
-	 * @RequestMapping(value="memberInfo",method=RequestMethod.GET) public String
-	 * memberInfo(MemberDTO memberDTO) throws Exception {
-	 * logger.info("memberInfo.jsp 요청");
-	 * 
-	 * return "memberInfo"; }
-	 */
+	@RequestMapping(value = "memberInfo", method = RequestMethod.GET)
+	public String memberInfo(MemberDTO memberDTO) throws Exception {
+		logger.info("memberInfo.jsp 요청");
+
+		return "memberInfo";
+	}
+
 	@RequestMapping(value = "memberInfoCheck", method = RequestMethod.POST)
 	public ModelAndView memberInfoCheck(@ModelAttribute MemberDTO memberDTO, HttpSession session) throws Exception {
 		logger.info("memberInfoCheck() 마이페이지 요청");
