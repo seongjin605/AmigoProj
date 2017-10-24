@@ -4,11 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css">
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 <title>자유 게시판</title>
-
+<script src="css/bootstrap-iso.css"></script>
 <script>
 	$(document).ready(function() {
 		$("#btn btn-primary").click(function() {
@@ -24,7 +25,6 @@
 	}
 </script>
 <style>
-.bootstrap-iso .btn { vertical-align:bottom; !important; }
 #boardTable {
 	margin-top: 200px;
 }
@@ -62,7 +62,7 @@
 				<tr>
 					<td colspan="5">
 						<nav>
-							<div style="width: 700px;" class="center-block clearfix">
+							<div style="width: 650px;" class="center-block clearfix">
 								<ul class="pagination pagination-lg">
 									<!-- **처음페이지로 이동 : 현재 페이지가 1보다 크면  [처음]하이퍼링크를 화면에 출력-->
 									<c:if test="${map.boardPager.curBlock > 1}">

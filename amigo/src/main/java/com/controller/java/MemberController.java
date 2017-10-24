@@ -82,4 +82,25 @@ public class MemberController {
 		}
 		return mav;
 	}
+	@RequestMapping("mypageHome")
+	public String mypageHome() {
+		logger.info("mypageHome 페이지 요청");
+		return "mypageHome";
+	}
+	
+	@RequestMapping("mypageUpdate")
+	public String mypageUpdate() {
+		logger.info("mypageUpdate 요청");
+		return "mypageUpdate";
+	}
+	@RequestMapping("mypageList")
+	public String mypageList() {
+		logger.info("mypageList 페이지 요청");
+		return "mypageList";
+	}
+	@RequestMapping("mypageQuit")
+	public String mypageQuit() {
+		logger.info("mypageQuit 페이지 요청");
+		return "mypageQuit";
+	}
 }

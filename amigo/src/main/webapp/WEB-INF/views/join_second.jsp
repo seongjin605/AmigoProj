@@ -9,23 +9,74 @@
 <title>Insert title here</title>
 <script src="script/checkEffect.js"></script> 
 <script>
+/* $(function(){ 
+$("#id").keyup(function() {
+	$.ajax({
+		url : "join_second2",
+		type : "post",
+		data : $("form").serialize(),
+		success : function(data) {
+			console.log(data);
+			if (data.length > 0) {
+			document.getElementById("id_output").text = "이미 해당 아이디로 가입된 회원가 있습니다.";
+			} else {
+				if ($("#id").val().length < 5) {
+				document.getElementById("id_output").text = "아이디를 5자 이상 입력해주세요.";
+				} else {
+					document.getElementById("id_output").text = "사용 가능한 아이디입니다.";
+				}
+			}
+		}
+ 		error : function(error) {
+			alert(error.statusText);
+		} 
+	});
+	return false;
+})
+}); */
+//-------------------------------------------------------------------------
 	$(document).ready(function(){
 		var pwd_check = false;
 		var email_check = false;
-
 		
-		/* 아이디체크 */
-		$("#id").stop().blur(function(){
+		/* 추가 ajax 아이디 체크 부분 */
+		$("#mid").keyup(function(){
 			 var id =$(this).val();
 			 var $id_parent = $(this).parent();
+		
+	
+		
+			$.ajax({
+				url : "join_second2",
+				type : "post",
+				dataType:"json",
+				data : $("#join_second_form").serialize(),
+				success : function(data) {
+			
+			 		if (data==false) {
+					$("#id_output").text("중복된 아이디입니다..");
+					
+					}  else if(data == true) {
+						if ($("#mid").val().length < 5) {
+						
+							$("#id_output").text ("아이디를 5자 이상 입력해주세요.");
+						} else {
+							$("#id_output").text("사용 가능한 아이디입니다.");
+						}
+					}  
+					
+				},  error:function(request,status,error){
+			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			       }
+			})
 			 
+			 /* ajax 아이디 체크 부분 끝 */
 			 if(id == '')
 				 errorCheckEffect("이름을 입력하세요",$id_parent);
 			 else
 				 successCheckEffect($id_parent);
 		})
 		/*  -------------------- ---------------------------------------- */
-		
 		
 		/* 비밀번호 체크  */
 		$("#pwd").stop().blur(function(){
@@ -89,7 +140,6 @@
 				
 		})
 		
-
 		$("#last_email").stop().blur(function(){
 			email_check = emailCheck()
 			var last_email = $("#last_email").val();
@@ -181,7 +231,6 @@
 		var num = password.search(/[0-9]/g);
 		var eng = password.search(/[a-z]/ig);
 		var spe = password.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-
 		if(password == ''){
 			errorCheckEffect("비밀번호를 입력하세요",$password_parent)		
 			return false;
@@ -329,17 +378,20 @@
 	<%@ include file="join_header.jsp" %>
 	<div id="container">
 		<h3>기본정보입력</h3>
-		<form method="post" action="" id="join_second_form">
+		<form method="post" id="join_second_form">
 			<div id="id_field" class="join_row">
 				<label for="id">아이디 </label>
-				<input type="text" id="id" name="mid" placeholder="ID를 입력">
+				<input type="text" id="mid" name="mid" placeholder="ID를 입력하세요">
 				<span class="input_check"></span>
-				<i class="fa fa-check" aria-hidden="true"></i>
+				<i class="fa fa-check" aria-hidden="true"></i><p>
+				<!-- 아이디 입력 구문 헬퍼 -->
+				<span id="id_output"></span>
+				
 			</div>
 			
 			<div id="pwd_field" class="join_row">
 				<label for="pwd">비밀번호 </label>
-				<input type="password" id="pwd" name="mpwd" placeholder="영문,숫자,특수문자혼합하여 8~20자리입력">
+				<input type="password" id="pwd" name="mpwd" placeholder="영문,숫자,특수문자혼합하여 8~20자리를 입력">
 				<span class="input_check"></span>
 				<i class="fa fa-check" aria-hidden="true"></i>
 			</div>

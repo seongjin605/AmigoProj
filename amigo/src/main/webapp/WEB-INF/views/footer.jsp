@@ -15,8 +15,8 @@
 	<div class="second-foot">
 		<div class = "item_list row_1">
 			<ul class="item col_1">
-				<li>회사명</li>
-				<li>메피컨(주)</li>	
+				<li>학원명</li>
+				<li>KIC 캠퍼스</li>	
 			</ul>
 			
 			<ul class="item col_2">
@@ -28,7 +28,7 @@
 		<div class="item_list row_2">
 			<ul class="item col_1">
 				<li>팀장</li>
-				<li>송택우</li>
+				<li>박성진</li>
 			</ul>
 			<ul class="item col_2">
 				<li>사업자등록번호</li>
@@ -39,25 +39,13 @@
 		<div class="item_list row_2">
 			<ul class="item col_1">
 				<li>Front End</li>
-				<li>최진희 김윤지 이민지 송택우 </li>
+				<li>김예진 박성진 송택우 최해군</li>
 			</ul>
 			<ul class="item col_2">
 				<li>Back End</li>
-				<li>송택우 최진희 이진균  이민지 김윤지</li>
+				<li>김예진 박성진 송택우 최해군</li>
 			</ul>
-		</div>
-		
-		<div class="item_list row_2">
-			<ul class="item col_1">
-				<li>R,Python,Hadoop</li>
-				<li>이진균 송택우 최진히 김윤지 이민지 </li>
-			</ul>
-			<ul class="item col_2">
-				<li>TensorFlow DeepLearning</li>
-				<li>이진균 송택우</li>
-			</ul>
-		</div>
-		
+		</div>		
 		
 		<div class="item_list row_3">
 			<ul class="item col_1">

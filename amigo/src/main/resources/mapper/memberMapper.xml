@@ -32,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </insert>
     
     <select id="memberInfo" resultType="String">
-      SELECT mid,mpwd 
+      SELECT mpwd 
       FROM amigo_member
       WHERE mid=#{mid} AND mpwd = #{mpwd}
     </select>
