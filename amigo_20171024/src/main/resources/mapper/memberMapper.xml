@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="member">
+    
+    <select id="loginCheck" resultType="String">
+        SELECT mid,mpwd 
+        FROM amigo_member
+        WHERE mid = #{mid} AND mpwd = #{mpwd}
+    </select>
+    
+    <select id="viewMember" resultType="memberDTO">
+        SELECT 
+            mid,
+            mname,
+            memail,
+            mregdate
+        FROM amigo_member
+        WHERE mid = #{mid} AND mpwd = #{mpwd}
+    </select>
+ 
+     <insert id="insertMember" parameterType="memberDTO">
+        INSERT INTO amigo_member
+            (mid,mpwd,mname,mtel,memail,mgender,mage)
+        VALUES 
+            (#{mid}, #{mpwd}, #{mname}, #{mtel},#{memail},#{mgender},#{mage})    
+    </insert>
+    
+    <select id="memberInfo" resultType="String">
+    SELECT mpwd
+    FROM amigo_member
+    WHERE mpwd=#{mpwd}
+    </select>
+</mapper>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- parameterType(전달값):해당 쿼리문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래스명이나 별칭 -->
+<!-- resultType(결과값):해당 쿼리 결과값을 리턴하는 타입의 패키지 경로를 포함한 전체 클래스명이나 별칭 -->
+<mapper namespace="qna">
+
+	<!-- QnA -->
+	
+	<!-- QnA 글쓰기 -->
+	<insert id="insertQna" parameterType="qnaDTO">
+    	<![CDATA[
+		   INSERT INTO t_qna values (
+				t_qna_seq.nextval, 
+				#{category}, 
+				#{q_subject}, 
+				#{q_content}, 
+				sysdate,
+				#{writer}
+				) 
+    	]]>
+	</insert>
+	
+		<!-- 1:1 문의 게시판 목록 보기 -->
+	<select id="selectQna" resultType="qnaDTO">
+		select num, category, q_subject, q_content, regdate, writer
+		from t_qna
+		order by num desc
+	</select>
+	
+	<!-- 문의 게시판 상세보기 -->
+	<select id="viewQna" resultType="qnaDTO"  parameterType="int">
+	
+		select *
+		from t_qna
+		where num=#{num}
+	
+	</select>
+	
+	<!--글 삭제하기 -->
+	<delete id="deleteQna" parameterType="int">
+	
+		delete
+		from t_qna
+		where num=#{num}		
+		
+	</delete>
+	
+	<!-- 글 수정하기  -->
+	<update id="updateQna" parameterType="qnaDTO" >
+	
+		update t_qna
+		set q_subject = #{q_subject}, 
+			 q_content = #{q_content}
+		where
+			num=#{num}				
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>
