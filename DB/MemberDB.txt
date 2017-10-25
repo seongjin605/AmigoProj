@@ -1,0 +1,24 @@
+
+create table amigo_member(
+  mid varchar2(20) primary key,
+  mpwd varchar2(70) not null,
+  mname varchar2(20) not null,
+  mtel varchar2(30) not null,
+  memail varchar2(50) not null,
+  mgender varchar2(5),
+  mregdate date default sysdate,
+  mage number(3) not null,
+  enabled char(1) not null,
+  CONSTRAINT chk_mgender CHECK (mgender IN ('M','W'))
+);
+
+select * from amigo_member;
+
+insert into amigo_member(mid,mpwd,mname,mtel,memail,mgender,mage) values('iu','1234','æ∆¿Ã¿Ø','010-1234-5678','Iu@gmail.net','W',23);
+
+CREATE TABLE AMIGO_AUTHOR(
+  gnum number(8) primary key,
+  mid varchar2(20) not null,
+  AUTHORITY varchar2(20) DEFAULT 'ROLE_USER' not null ,
+  CONSTRAINT mid_fk FOREIGN KEY(mid) REFERENCES amigo_member(mid) ON DELETE CASCADE 
+);
