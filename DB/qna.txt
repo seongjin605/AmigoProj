@@ -1,0 +1,22 @@
+create table t_qna(
+	num number,
+	category varchar2(26) not null,
+	q_subject varchar2(100) not null,
+	q_content varchar2(4000) not null,
+	regdate date default sysdate,
+	writer varchar2(40) 
+);
+
+create sequence t_qna_seq
+                 START WITH 1
+                 INCREMENT BY 1;
+
+
+insert into t_qna values(
+	t_qna_seq.nextval,
+	'기타',
+	'잘',
+	'보이니',
+	sysdate,
+	'나야나'
+);
