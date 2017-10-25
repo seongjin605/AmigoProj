@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.amigo.dao.club">
+  	<insert id="insertClub">
+  		INSERT INTO amigo_club(cnum,ctitle,ccontent,cpic,cmaster,carea,choby)
+  		VALUES(AMIGO_CLUB_SEQ.NEXTVAL,#{cTitle},#{cContent},#{cPic},#{cMaster},#{cArea},#{cHoby})
+  	</insert>
+  	
+  	<select id="selectSubArea" resultType="String">
+  		SELECT
+  			area2
+  		FROM
+  			amigo_area
+  		WHERE
+  			area1 = #{area1}
+  	</select>
+  	
+  	<select id="selectArea" resultType="int">
+  		SELECT
+  			anum
+  		FROM 
+  			amigo_area
+  		WHERE
+  			area1 = #{area1} AND area2=#{area2}
+  	</select>
+  	
+  	<select id="selectHobby" resultType="int">
+  	  	SELECT
+  			hnum
+  		FROM 
+  			amigo_hobby
+  		WHERE
+  			hobby = #{hobby}
+  	</select>
+  
+  </mapper>
