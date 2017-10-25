@@ -230,16 +230,23 @@
 
 	<div class="bootstrap-iso">
 		<div class="col-md-6">
+			<p>
+				<em>지도를 클릭해주세요!</em>
+			</p>
+			<div id="clickLatlng"></div>
+
 			<div id="map" style="width: 100%; height: 900px;"></div>
 		</div>
 	</div>
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b29fce79e611838c807e77bde81127dc&libraries=clusterer"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b29fce79e611838c807e77bde81127dc"></script>
 	<script>
 		var map = new daum.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
 			center : new daum.maps.LatLng(36.2683, 127.6358), // 지도의 중심좌표
-			level : 14
+			level : 12
 		// 지도의 확대 레벨
 		});
 
@@ -285,6 +292,44 @@
 						anchor : cluster.getCenter()
 					});
 				});
+
+		// 지도에 확대 축소 컨트롤을 생성한다
+		var zoomControl = new daum.maps.ZoomControl();
+
+		// 지도의 우측에 확대 축소 컨트롤을 추가한다
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+		// 지도 타입 변경 컨트롤을 생성한다
+		var mapTypeControl = new daum.maps.MapTypeControl();
+
+		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+		// 지도를 클릭한 위치에 표출할 마커입니다
+		var marker = new daum.maps.Marker({
+			// 지도 중심좌표에 마커를 생성합니다 
+			position : map.getCenter()
+		});
+		// 지도에 마커를 표시합니다
+		marker.setMap(map);
+
+		// 지도에 클릭 이벤트를 등록합니다
+		// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+		daum.maps.event.addListener(map, 'click', function(mouseEvent) {
+
+			// 클릭한 위도, 경도 정보를 가져옵니다 
+			var latlng = mouseEvent.latLng;
+
+			// 마커 위치를 클릭한 위치로 옮깁니다
+			marker.setPosition(latlng);
+
+			var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+			message += '경도는 ' + latlng.getLng() + ' 입니다';
+
+			var resultDiv = document.getElementById('clickLatlng');
+			resultDiv.innerHTML = message;
+
+		});
 	</script>
 </body>
 </html>
