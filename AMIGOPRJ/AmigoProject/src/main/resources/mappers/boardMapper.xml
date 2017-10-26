@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.amigo.dao.board">
+  	<select id="selectBoardVOs" resultType="BoardVO">
+  		SELECT 
+  			bnum,btitle,bcontent,breadcnt,bregdate,bupdate,blike,bwriter
+  		FROM
+  			amigo_board
+  		WHERE
+  			cnum =#{cNum}
+  	</select>
+  	
+  	<insert id="insertBoardVO">
+  		INSERT INTO AMIGO_BOARD(bnum,btitle,bcontent,bwriter,bcategory,cnum)
+  		VALUES
+  			(amigo_board_seq.NEXTVAL,#{bTitle},#{bContent},#{bWriter},#{bCategory},#{cNum})
+  	</insert>
+  	
+  	<update id="updateBoardVO">
+  		UPDATE 
+  			amigo_board
+  		SET
+  			btitle=#{bTitle},
+  			bcontent=#{bContent},
+  			bwriter=#{bWriter},
+  			bcategory=#{bCategory}
+  		WHERE
+  			bnum = #{bNum}
+  	</update>
+  	
+  	<delete id="deleteBoardVO">
+  		DELETE FROM amigo_board
+  		WHERE bunm = #{bunm};
+  	</delete>
+  </mapper>

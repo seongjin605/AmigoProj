@@ -9,7 +9,7 @@
 <script>
 	$(document).ready(function(){
 		$("#loginBtn").click(function(){
-			$("#login_form").attr('action','<c:url value="${location}/member/login_process.amg"/>');
+			$("#login_form").attr("method","post").attr('action','<c:url value="${location}/member/login_process.amg"/>');
 		})
 		$("#joinBtn").click(function(){
 			$("#login_form").attr("method","get").attr("action","${location}/member/joinFirst.amg");
@@ -37,7 +37,7 @@
 	<div id="container">
 		<div id="img_main">	
 			<div id="content">
-				<form method="post" id="login_form">
+				<form id="login_form">
 					<h2>LOGIN</h2>
 					<span id="stateCh"></span>
 					<div id="id_div" class="login_row">

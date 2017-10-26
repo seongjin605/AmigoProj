@@ -34,5 +34,10 @@
   		WHERE
   			hobby = #{hobby}
   	</select>
+  	
+  	<select id="selectClub" resultType="ClubVO">
+  		SELECT
+  			
+  	</select>
   
   </mapper>

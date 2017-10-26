@@ -114,5 +114,6 @@ input[type='submit']:hover{
 	border-right: 1px solid rgba(0,0,0,.4);
 }
 
+/* input효과제거 */
 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px white inset!important;}
 input:-webkit-autofill { transition: background-color 5000s ease-in-out 0s;}

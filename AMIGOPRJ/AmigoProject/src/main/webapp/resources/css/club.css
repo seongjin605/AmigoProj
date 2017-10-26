@@ -6,11 +6,10 @@
 }
 
 #aside{
-	position: relative;
+	position: absolute;
 	left:0;
-	top:0;
+	top:620px;
 	margin: 20px 30px 0 15px;
-	float:left;
 	height:400px;
 	background:#eee;
 	padding:20px;
@@ -61,9 +60,58 @@ ul.sub_ul .fa{
 	color: rgba(50,50,50,.8);
 	font-size: 13px;
 }
+#board_container{
+	position: relative;
+	left: 250px;
+	top: 100px;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
 
+#board_content{
+	max-width: 80%;
+	min-width: 720px;
+}
+
+#board_content > h2{
+	font-size: 35px;
+	font-weight: bold;
+	color:black;
+	
+}
+#board_content > table {
+	border-top: 1px solid rgba(0,0,0,.4);
+	border-bottom: 1px solid rgba(0,0,0,.4);
+	width:100%;
+	text-align: center;
+	padding: 20px;
+	margin-right: 20px;
+}
+ 
+#board_content > table tr:nth-child(2n+1) td{
+	padding:25px;
+}
+
+a.title_link:hover{
+	color:rgba(0,0,0,.6);
+}
+
+
+#footer{
+	background: red;
+}
+.boardLine{
+	border:1px solid #dad8d7;
+	padding:0;
+}
+.paging_num{
+	display: block;
+	text-align: center;
+}
 #content{
-	margin-top:20px;
+	margin-top:80px;
 	float:right;
 }
 

@@ -16,7 +16,9 @@
 	
 	<http auto-config="true" use-expressions="true" entry-point-ref="InterceptFailureHandler">
 		<intercept-url pattern="/resources/**" access="permitAll"/>
-		<intercept-url pattern="/club/**" access="hasAnyRole('ROLE_USER,ROLE_ADMIN')"/>
+		<intercept-url pattern="/club/clubSearch.amg" access="permitAll"/>
+		<intercept-url pattern="/club/club.amg" access="hasAnyRole('ROLE_USER,ROLE_ADMIN')"/>
+		<intercept-url pattern="/club/clubMake.amg" access="hasAnyRole('ROLE_USER,ROLE_ADMIN')"/>
 		<intercept-url pattern="/**" access="permitAll"/>
 	
 		<form-login

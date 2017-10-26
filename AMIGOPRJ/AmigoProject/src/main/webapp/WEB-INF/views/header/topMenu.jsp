@@ -9,6 +9,24 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="<c:url value="/resources/css/reset.css"/>">
+<style>
+	#viewCLub{
+		position:absolute;
+		top:0;
+		left:1200px;
+		display:inline-block;
+		background-color: black;
+		width:100px;
+		height:200px;
+		opacity: 0;
+		-webkit-transition: opacity 0.3s;
+		transition: opacity 0.3s;
+	}
+	
+	#myClub:hover + #viewCLub{
+		opacity:1
+	}
+</style>
 <script>
 	function logOutCheck(){
 		if(confirm("로그아웃 하시겠씁니까?")){
@@ -37,7 +55,12 @@
 		   	
 		   	<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
 		   		<a href="javascript:logOutCheck()" class="btn" id="logOut"><i class="fa fa-user-times" aria-hidden="true"></i></a>
-		   		<a href="${location}/member/myPage.amg" class="btn" id="user"><span id="myPage">MyPage</span></a>
+		   		<a href="" class="btn" id="mypage">
+		   			<span id="myClub">가입한 동호회</span>
+		   		</a>
+		   		<a href="${location}/member/myPage.amg" class="btn" id="user">
+		   			<span id="myPage">MyPage</span>
+		   		</a>
 		   		<form id="logOutForm" action="<c:url value='${location}/member/logOut.amg'/>"method="post">
 		   			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		   		</form>
@@ -56,8 +79,8 @@
 			<li><a href="#Link" title="Link">게시판</a></li>
 			<li><a href="#Link" title="Link">고객센터</a>
 				<ul>
-					<li><a href="freQuestion.amg" title="Link">F&Q</a></li>
-					<li><a href="#Link" title="Link">1:1질문</a></li>
+					<li><a href="${location}/qna/freQuestion.amg" title="Link">F&Q</a></li>
+					<li><a href="${location}/qna//qna.amg" title="Link">1:1질문</a></li>
 				</ul>
 			</li>
 	    </ul>

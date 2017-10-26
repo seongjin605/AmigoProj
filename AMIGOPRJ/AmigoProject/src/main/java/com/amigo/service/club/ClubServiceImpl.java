@@ -33,7 +33,7 @@ public class ClubServiceImpl implements ClubService {
 		club.setcTitle((String)map.get("cTitle"));
 		club.setcContent((String)map.get("cContent"));
 		club.setcPic(picPath);
-		club.setcMaster("È£³¯µÎ");
+		club.setcMaster((String)map.get("username"));
 		club.setcArea(aNum);
 		club.setcHoby(hNum);
 		

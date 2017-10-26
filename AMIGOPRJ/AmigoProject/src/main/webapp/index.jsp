@@ -6,7 +6,6 @@
 <%@ include file="/WEB-INF/views/header/topMenu.jsp" %>
 <link rel="stylesheet" href="<c:url value="/resources/css/index.css" />">
 <script>
-
 	$(function(){
 		/* $(".parallax-container").parallax({imageSrc:"door.jpg"})  */
  		 if($('.parallax-window').length){
@@ -68,7 +67,7 @@
 			<div id="article_3" class="article-parallax">
 				<div class="parallax-window" id="parallax-image" data-parallax="scroll" data-image-src="<c:url value="/resources/images/door.jpg" />">
 					<div class="content_text">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg">
 							<div class="border-line"></div>
 							<div class="img_caption">
 								<h1 class="main-comment font-change">AmiGo Societies</h1>
@@ -85,7 +84,7 @@
 				<h2>동호회 테마별</h2>
 				<div class="first-article">
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='자연'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/nature.jpg"/>">
 								<div class="border-line"></div>
@@ -95,7 +94,7 @@
 					</div>
 							
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='여행 캠핑'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/tour.jpg"/>">
 								<div class="border-line"></div>
@@ -105,7 +104,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='자동차'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/supercar.jpg"/>">
 								<div class="border-line"></div>
@@ -115,7 +114,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='운동 스포츠'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/workout.jpg"/>">
 								<div class="border-line"></div>
@@ -125,7 +124,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='동물 반려견'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/animals.png"/>">
 								<div class="border-line"></div>
@@ -135,7 +134,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='공부 스터디'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/study.jpg"/>">
 								<div class="border-line"></div>
@@ -145,7 +144,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">	
+						<a href="${location}/club/clubSearch.amg?keyword='스키 보드'">	
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/ski.jpg"/>">
 								<div class="border-line"></div>
@@ -155,7 +154,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='자전거'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/bycicle.jpg"/>">
 								<div class="border-line"></div>
@@ -165,7 +164,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='등산'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/climb.jpg"/>">
 								<div class="border-line"></div>
@@ -175,7 +174,7 @@
 					</div>
 							
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='술 칵테일'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/cocktail.jpg"/>">
 								<div class="border-line"></div>
@@ -185,7 +184,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='공연 전시'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/concert.jpg"/>">
 								<div class="border-line"></div>
@@ -195,7 +194,7 @@
 					</div>
 							
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='문화'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/culture.jpg"/>">
 								<div class="border-line"></div>
@@ -205,7 +204,7 @@
 					</div>
 							
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='패션'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/fashion.jpg"/>">
 								<div class="border-line"></div>
@@ -215,7 +214,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='게임'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/game.jpg"/>">
 								<div class="border-line"></div>
@@ -225,7 +224,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='전공 직장'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/work.jpg"/>">
 								<div class="border-line"></div>
@@ -235,7 +234,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='영화'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/movie.jpg"/>">
 								<div class="border-line"></div>
@@ -245,7 +244,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='음악'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/music.jpg"/>">
 								<div class="border-line"></div>
@@ -255,7 +254,7 @@
 					</div>
 						
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='사진'">
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/picture.jpg"/>">
 								<div class="border-line"></div>
@@ -265,7 +264,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">				
+						<a href="${location}/club/clubSearch.amg?keyword='독서'">				
 							<!-- <div class="item-box"> -->
 								<img src="<c:url value="/resources/images/read.jpg"/>">
 								<div class="border-line"></div>
@@ -275,7 +274,7 @@
 					</div>
 					
 					<div class="img_box item-box">
-						<a href="#">
+						<a href="${location}/club/clubSearch.amg?keyword='기타 이색'">
 							<img src="<c:url value="/resources/images/etc.jpg"/>">
 							<div class="border-line"></div>
 							<span class="supply-comment">#기타/이색</span>

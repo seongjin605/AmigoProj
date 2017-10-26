@@ -44,7 +44,7 @@
 				<ul>
 					<li><span>고객센터</span>
 						<ul class="sub_ul">
-							<li><a href="fre_question.jsp"><i class="fa fa-server" aria-hidden="true"></i>F&Q</a></li>
+							<li><a href="${location}/qna/freQuestion.amg"><i class="fa fa-server" aria-hidden="true"></i>F&Q</a></li>
 							<li><a href="#"><i class="fa fa-server" aria-hidden="true"></i>1:1문의</a></li>
 						</ul>
 					</li>

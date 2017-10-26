@@ -26,6 +26,7 @@ public class FileUpLoad {
 			}
 		}
 		
+		System.out.println("경로확인:"+uploadPath);
 		return saveFileName;
 	}
 	

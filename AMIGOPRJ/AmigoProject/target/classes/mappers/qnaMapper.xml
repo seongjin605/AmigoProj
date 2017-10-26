@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- parameterType(전달값):해당 쿼리문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래스명이나 별칭 -->
+<!-- resultType(결과값):해당 쿼리 결과값을 리턴하는 타입의 패키지 경로를 포함한 전체 클래스명이나 별칭 -->
+
+<mapper namespace="com.amigo.dao.qna">
+
+	<!-- QnA -->
+	
+	<!-- QnA 글쓰기 -->
+	<insert id="insertQna" parameterType="QnADTO">
+    	<![CDATA[
+		   INSERT INTO amigo_qna VALUES (
+				amigo_qna_seq.nextval, 
+				#{category}, 
+				#{q_subject}, 
+				#{q_content}, 
+				sysdate,
+				#{writer}
+				) 
+    	]]>
+	</insert>
+	
+		<!-- 1:1 문의 게시판 목록 보기 -->
+	<select id="selectQna" resultType="QnADTO">
+		SELECT 
+			num, category, q_subject, q_content, regdate, writer
+		FROM 
+			amigo_qna
+		ORDER 
+			by num desc
+	</select>
+	
+	<!-- 문의 게시판 상세보기 -->
+	<select id="viewQna" resultType="QnADTO"  parameterType="int">
+	
+		SELECT 
+			*
+		FROM 
+			amigo_qna
+		WHERE 
+			num=#{num}
+	
+	</select>
+	
+	<!--글 삭제하기 -->
+	<delete id="deleteQna" parameterType="int">
+	
+		DELETE
+		FROM 
+			amigo_qna
+		WHERE 
+			num=#{num}		
+		
+	</delete>
+	
+	<!-- 글 수정하기  -->
+	<update id="updateQna" parameterType="QnADTO" >
+	
+		UPDATE amigo_qna
+		SET q_subject = #{q_subject}, 
+			 q_content = #{q_content}
+		WHERE
+			num=#{num}				
+	</update>
+</mapper>

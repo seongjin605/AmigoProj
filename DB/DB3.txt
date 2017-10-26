@@ -1,0 +1,51 @@
+
+
+
+create table AMIGO_BOARD(
+  bnum number(10) PRIMARY KEY,
+  btitle varchar2(100) not null,
+  bcontent varchar2(4000) not null,
+  breadcnt number(8) default 0,
+  bregdate date default sysdate,
+  bupdate date default sysdate,
+  blike number(7) default 0,
+  bwriter varchar2(20) not null,
+  bcategory number(1) not null,
+  cnum number(8) not null,
+  CONSTRAINT bwriter_fk FOREIGN KEY(bwriter) REFERENCES amigo_member(mid) ON DELETE CASCADE,
+  CONSTRAINT bcate_fk FOREIGN KEY(bcategory) REFERENCES amigo_category(ctnum) ON DELETE CASCADE,
+  CONSTRAINT bo_cnum_fk FOREIGN KEY(cnum) REFERENCES amigo_club(cnum) ON DELETE CASCADE
+);
+
+
+
+
+
+create table AMIGO_CLUB_MEMBERS(
+  cmnum number(10) PRIMARY KEY,
+  mid varchar2(20) not null,
+  cnum number(8) not null,
+  cgrade varchar2(20),
+  CONSTRAINT cm_mid_fk FOREIGN KEY(mid) REFERENCES amigo_member(mid) ON DELETE CASCADE,
+  CONSTRAINT cm_cnum_fk FOREIGN KEY(cnum) REFERENCES amigo_club(cnum) ON DELETE CASCADE
+);
+
+
+
+
+
+
+
+
+create table AMIGO_CATEGORY(
+  ctnum number(1) PRIMARY KEY,
+  category varchar2(20) not null
+);
+select * from AMIGO_CATEGORY;
+
+insert into AMIGO_CATEGORY VALUES(1,'전체글보기');
+insert into AMIGO_CATEGORY VALUES(2,'자기소개');
+insert into AMIGO_CATEGORY VALUES(3,'QnA');
+insert into AMIGO_CATEGORY VALUES(4,'등업게시판');
+insert into AMIGO_CATEGORY VALUES(5,'자유게시판');
+

@@ -71,7 +71,7 @@ main {
 	letter-spacing:4px;
 	color:#b49759;
 }
-#log > i,#join > i, #logOut > i,#user > span{
+#log > i,#join > i, #logOut > i,#user > span,#mypage > span{
 	float:right;
 	line-height: 40px;
     padding: 30px 15px;
@@ -83,9 +83,10 @@ main {
 #logOut > i{
 	color:rgba(255,255,255,.6);
 }
-#user > span{
+#user > span,
+#mypage > span{
 	font-size: 15px;
-	color:rgba(255,255,255,.6);
+	color:rgba(255,255,255,.2);
 }
 #search > i:hover,#log > i:hover, #join > i:hover, #logOut > i:hover { color: #efa666;  }
 #search > i:hover:before{
@@ -100,7 +101,8 @@ main {
 	font-family: 'Tangerine', serif; content: "join"; 
 	font-size: 1.6em;	
 }
-#user > span:hover{
+#user > span:hover,
+#mypage > span:hover{
 	color:#b49759;
 }
 #logOut > i:hover:before{
