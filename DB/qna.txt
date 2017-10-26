@@ -1,4 +1,4 @@
-create table t_qna(
+create table amigo_qna(
 	num number,
 	category varchar2(26) not null,
 	q_subject varchar2(100) not null,
@@ -7,13 +7,11 @@ create table t_qna(
 	writer varchar2(40) 
 );
 
-create sequence t_qna_seq
-                 START WITH 1
-                 INCREMENT BY 1;
+create sequence amigo_qna_seq;
 
 
-insert into t_qna values(
-	t_qna_seq.nextval,
+insert into amigo_qna values(
+	amigo_qna_seq.nextval,
 	'기타',
 	'잘',
 	'보이니',
