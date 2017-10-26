@@ -1,4 +1,4 @@
-package com.model.qna.dto;
+package com.amigo.vo.qna;
 
 import java.sql.Date;
 
@@ -7,6 +7,7 @@ public class QnADTO {
 	private String category, q_subject, q_content, writer;
 	private int num;
 	private Date regdate;
+	
 	public String getCategory() {
 		return category;
 	}
@@ -44,5 +45,10 @@ public class QnADTO {
 		this.regdate = regdate;
 	}
 	
+	@Override
+	public String toString() {
+		return "QnADTO [category=" + category + ", q_subject=" + q_subject + ", q_content=" + q_content + ", writer="
+				+ writer + ", num=" + num + ", regdate=" + regdate + "]";
+	}	
 	
 }
