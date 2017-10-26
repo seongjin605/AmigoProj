@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="location" value="${pageContext.request.contextPath}"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="<c:url value="/resources/css/top-menu.css" />">
@@ -11,9 +12,8 @@
 <script>
 	function logOutCheck(){
 		if(confirm("로그아웃 하시겠씁니까?")){
-			location.href="${location}/member/logOut.amg";
+			$("#logOutForm").submit()
 		}
-		
 	}
 </script>
 <div class="nav_wrapper"> 
@@ -29,18 +29,19 @@
   		<a href="../../../index.jsp" title="logo" id="logo">
   			<h2>amiGo</h2>
   		</a>
- 	    <div class="sub-logo">
-		    <c:choose>
-		    	<c:when test="${sessionScope.userId == null }">
-		    		<a href="${location}/member/login.amg" class="btn" id="log"><i class="fa fa-user-o" aria-hidden="true"></i></a>
-			    	<a href="${location}/member/joinFirst.amg" class="btn" id="join"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-		    	</c:when>
-		    	
-		    	<c:otherwise>
-		    		<a href="javascript:logOutCheck()" class="btn" id="logOut"><i class="fa fa-user-times" aria-hidden="true"></i></a>
-		    		<a href="${location}/member/myPage.amg" class="btn" id="user"><span id="myPage">MyPage</span></a>
-		    	</c:otherwise>
-		    </c:choose>
+ 	    <div class="sub-logo"> 
+		    <sec:authorize access="isAnonymous()">
+		   		<a href="${location}/member/login.amg" class="btn" id="log"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+		    	<a href="${location}/member/joinFirst.amg" class="btn" id="join"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+		  	</sec:authorize>
+		   	
+		   	<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+		   		<a href="javascript:logOutCheck()" class="btn" id="logOut"><i class="fa fa-user-times" aria-hidden="true"></i></a>
+		   		<a href="${location}/member/myPage.amg" class="btn" id="user"><span id="myPage">MyPage</span></a>
+		   		<form id="logOutForm" action="<c:url value='${location}/member/logOut.amg'/>"method="post">
+		   			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		   		</form>
+			</sec:authorize>	    
  	    </div>
  	    
   	<nav id="menu" class="menu">

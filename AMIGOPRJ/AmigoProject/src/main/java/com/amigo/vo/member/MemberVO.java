@@ -25,14 +25,14 @@ public class MemberVO implements UserDetails{
 	private Collection<? extends GrantedAuthority> authorities;
 	
 	
-	public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+	public void setAuthorities(Collection<GrantedAuthority> authorities) {
 		this.authorities = authorities;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.authorities;
 	}
 	
 	@Override

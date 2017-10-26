@@ -3,6 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
 <%@ include file="../header/topMenu.jsp" %>
 <script src="<c:url value="/resources/script/checkEffect.js"/>"></script>
 <script src="<c:url value="/resources/script/club_make.js"/>"></script>
@@ -10,6 +12,13 @@
 <title>Insert title here</title>
 <script>
 	$(document).ready(function(){
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
+		 
+		 $(document).ajaxSend(function(e, xhr, options) {
+	        xhr.setRequestHeader(header, token);
+	    });
+
 		var i = 0;
 		
 		/*select 값 변경할때 작동*/
@@ -29,7 +38,7 @@
 			console.log("????"+i);
 			
 			if(i == icons.length )
-				$("#club_form").attr("action","${location}/club/insertClub.amg").submit();
+				$("#club_form").attr("action","${location}/club/insertClub.amg?${_csrf.parameterName}=${_csrf.token}").submit();
 			else
 				alert("모두 올바르게 입력 하셔야 합니다.");
 		})
@@ -37,7 +46,7 @@
 	 	/* 취소버튼 클릭시  */
 		$("#cancelBtn").click(function(){
 			if(confirm("이 페이지에서 나가시겠습니까?"))
-				$("#club_form").attr("method","get").attr("action","${location}/index.amg").submit();  
+				$("#club_form").attr("method","get").attr("action","../../../index.jsp").submit();  
 		})
 	})
 	
@@ -120,6 +129,12 @@
 						</select>
 								
 						<select name="cArea2" id="area2">
+							<option value="관악구">관악구</option>
+							<option value="강남구">강남구</option>
+							<option value="용산구">용산구</option>
+							<option value="강서구">강서구</option>
+							<option value="금천구">금천구</option>
+							<option value="송파구">송파구</option>
 						</select>		
 						<span class="input_check"></span>				
 					</div>

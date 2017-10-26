@@ -22,7 +22,9 @@ body{
 	box-shadow:2px 2px 1px rgba(0,0,0,.7),-2px -2px 1px rgba(40,40,40,.5);
 	background-color: white;
 }
-
+#stateCh{
+	color:red;
+}
 #login_form > h2{
 	font-weight: 800;
 	font-size: 45px;
@@ -32,9 +34,13 @@ body{
 	border-bottom: 1px solid rgba(50,50,50,.3);
 }
 
-	#login_form > .login_row{
-		margin-bottom: 20px;
-	}
+#login_fail{
+	color:red;
+}
+
+#login_form > .login_row{
+	margin-bottom: 20px;
+}
 	
 #login_form > .login_row >  label{
 	font-family: 'Jeju Gothic', serif;

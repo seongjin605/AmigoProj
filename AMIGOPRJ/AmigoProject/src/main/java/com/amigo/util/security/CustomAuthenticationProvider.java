@@ -14,7 +14,7 @@ import com.amigo.vo.member.MemberVO;
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	@Autowired
-	private UserDetailsService detailService;
+	private CustomUserDetailsService detailService;
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
@@ -22,6 +22,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		// TODO Auto-generated method stub
+		System.out.println("프로바이더가능?");
 		String user_id = (String) authentication.getPrincipal();
 		String user_pwd = (String) authentication.getCredentials();
 		
