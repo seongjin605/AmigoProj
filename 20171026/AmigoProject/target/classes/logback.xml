@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	 
+	  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	    <layout class="ch.qos.logback.classic.PatternLayout">
+	      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{%method:%line} - %msg%n</Pattern>
+	    </layout>
+	  </appender>
+	    
+	  <logger name="com.stw" level="info"/>
+<!-- 	  <logger name="java.sql" level="error" />
+	  <logger name="jdbc.sqlonly" level="debug" /> 
+	  <logger name="jdbc.sqltiming" level="debug" /> 
+	  <logger name="jdbc.audit" level="error" /> 
+	  <logger name="jdbc.resultset" level="error" /> -->
+ 
+	  <root level="debug">
+	    <appender-ref ref="STDOUT" />
+	  </root>
+</configuration>

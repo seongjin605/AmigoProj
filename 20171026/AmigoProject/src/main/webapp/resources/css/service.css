@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+.parallax-window {
+    min-height: 900px;
+    background: transparent;
+}
+
+#sev_container{
+	margin-top:80px;
+	background: #eee;
+	font-family: 'Jeju Gothic', serif;
+}
+#img_box{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+#img_box > h3{
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	font-weight: 900;
+	font-size: 30px;
+	color: white;
+}
+#main-img{
+	background-image: url(../images/sub-main.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width:100%;
+	height:100%;
+}
+.img-over{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: rgba(0,0,0,.2);
+}
+
+#section{
+	margin-top: 35px;
+	text-align: center;
+}
+
+#section > h3{
+	/* min-width:900px; */
+	font-weight: 800;
+	font-size: 25px;
+}
+
+#section > span{
+	/* min-width:900px; */
+	line-height:38px;
+	display:block;
+	font-weight: 800;
+	font-size: 24px;
+	margin: 25px 0;
+}
+
+#section > #first-article{
+	margin-top:50px;
+}
+
+#section > #first-article > img{
+	width:100%;
+	height:70%;
+	border:1px solid rgba(10,10,10,.3);
+}
+#section > #second-article{
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#section > #second-article > .icon_box{
+	flex:2 2 100px;
+	height: 100%;
+	padding:70px;
+	box-shadow: 2px 2px 2px #d0d0d0,
+			   -2px -2px 2px #d0d0d0;
+}
+
+#section > #second-article > .icon_box > i{
+	font-size: 100px;
+}
+div.icon_caption > h2{
+	margin:15px 0 15px 0;
+	font-weight: 700;
+	font-size: 24px;
+	color:rgba(0,0,0,.7);
+}
+
+div.icon_caption > span{
+	display: block;
+	min-height: 100px;
+	font-weight: 100;
+	font-size: 15px;
+	color: rgba(0,0,0,.5);
+}
+.article-parallax{
+	position:relative;
+	display:block;
+	width:100%;
+	/* height:820px; */
+	background:#111;
+} 
+
+.img_caption{
+	opacity:1;
+	width:100%;
+	position:absolute;
+	top:35%;
+	z-index:150;
+}
+
+.main-comment{
+	text-align:center;
+	letter-spacing:4px;
+	font-size:60px;
+	font-weight:bold;
+	font-family: 'Tangerine', serif;
+	color:#b49759;
+} 
+.sub-comment{
+	text-align:center;
+	letter-spacing:1px;
+	font-size:20px;
+	font-weight:400;
+	color:rgba(255,255,255,.9);
+} 
+
+#article_3{
+	height:100%;
+	padding:20px 0 0 0;
+}
+
+#article_3 > h3{
+	padding-bottom:15px;
+	font-size:20px;
+	font-weight: 500;
+	color:#1a1a1a;
+	font-family: 'Jeju Gothic', serif;
+}
+
+#article_3 > .parallax-window > .content_text{
+	margin-top:60px;
+	position: relative;
+	width: 100%;
+	height: 800px;
+	z-index:150;
+	-webkit-transition: all 0.4s ease; /* Safari */
+   	transition: all 0.4s ease;
+   	background:rgba(30,33,32,.5);
+}
+
+	

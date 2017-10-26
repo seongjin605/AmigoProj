@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.amigo.dao.member">
+  	<insert id="insertMember">
+  		INSERT INTO amigo_member(mid,mpwd,mname,mtel,memail,mgender,mage,enabled)
+  		VALUES(#{username},#{password},#{mName},#{mTel},#{mEmail},#{mGender},#{mAge},'1')
+  	</insert>
+  	
+  	<select id="selectMember" resultType="MemberVO">
+  		SELECT 
+  			mid as username,mpwd as password,mname,mtel,memail,mgender,mregdate,mage
+  		FROM
+  			amigo_member
+  		where mid=#{mid} 
+  	</select>
+  </mapper>
