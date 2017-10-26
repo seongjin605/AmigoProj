@@ -28,10 +28,7 @@
 		<beans:property name="maxUploadSize" value="10485760"/>
 	</beans:bean>
 	
-	<aop:config>				  
-		<aop:pointcut expression="execution(* com.amigo.service..*.*(..))" id="txPointCut"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
-	</aop:config>
+
 	<context:component-scan base-package="com.amigo.controller" />
 
 </beans:beans>

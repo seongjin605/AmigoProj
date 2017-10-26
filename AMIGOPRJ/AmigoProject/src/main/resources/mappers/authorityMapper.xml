@@ -5,7 +5,7 @@
   <mapper namespace="com.amigo.dao.authority">
   	<insert id="insertUser">
   		INSERT INTO amigo_author
-  		VALUES(#{username},#{autho})
+  		VALUES(AMIGO_AUTHOR_SEQ.NEXTVAL,#{username},#{authority})
   	</insert>
   	
   	<select id="selectAuthor" resultType="String">

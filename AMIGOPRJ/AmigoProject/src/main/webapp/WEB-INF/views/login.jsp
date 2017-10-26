@@ -12,13 +12,14 @@
 			$("#login_form").attr('action','<c:url value="${location}/member/login_process.amg"/>');
 		})
 		$("#joinBtn").click(function(){
-			$("#login_form").attr("method","get").attr("action","${location}/joinFirst.amg");
+			$("#login_form").attr("method","get").attr("action","${location}/member/joinFirst.amg");
 		})
 		
 		if(${state == 'fail'})
 			$("#stateCh").html("로그인정보가 틀립니다.다시입력해주세요");
 		else
 			$("#stateCh").html("");
+		
 	})
 </script>
 <style>

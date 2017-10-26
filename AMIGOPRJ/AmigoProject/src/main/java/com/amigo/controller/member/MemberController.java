@@ -21,6 +21,7 @@ public class MemberController {
 
 	@RequestMapping("/login.amg")
 	public String login(HttpServletRequest request,
+						
 						Model model,
 						@RequestParam(value="state",defaultValue="success") String state) {
 		System.out.println("¸®ÆÛ:"+request.getHeader("referer"));
