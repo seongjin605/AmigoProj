@@ -1,0 +1,117 @@
+.none{
+	display: none;
+}
+
+#main_img > h2{
+	color:rgba(255,255,255,.8);
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	top:-200px;
+}
+
+#content{
+	width:90%;
+	padding:0;
+}
+
+.article{
+	width:500px;
+	margin: 0 auto;
+	border-bottom: 1px solid rgba(0,0,0,.4);
+	margin: 120px 50% 0 35%
+}
+
+.article:LAST-CHILD{
+	border: none;
+	margin-top: 50px;
+	margin-bottom: 150px;
+}
+
+.article > h2{
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 50px;
+	color: rgba(0,0,0,.6);
+}
+
+.article > ul{
+	text-align: left;
+}
+
+.article > ul li{
+	margin-bottom: 25px;
+}
+
+.article > ul  > li > span{
+	color: rgba(0,0,0,.7);
+	font-size:16px;
+	cursor: pointer;
+}
+
+.detail_answer{
+	font-size: 14px;
+	color: rgba(0,0,0,.5);
+	margin:20px 0 0 50px;
+}
+
+#aside{
+	position: absolute;
+	left:0;
+	top:540px;
+	margin: 20px 30px 0 15px;
+	float:left;
+	height:400px;
+	background:#eee;
+	padding:20px;
+	border:1px solid rgba(0,0,0,.2);
+	border-radius: 6px;
+}
+
+#aside > ul{
+	list-style: none;	
+	padding:0;
+	margin-top: 60px;
+}
+
+#aside > ul > li{
+	margin-bottom:15px;
+	border-bottom: 1px solid rgba(0,0,0,.3);
+	padding:20px 30px 20px 0;
+	
+}
+
+#aside > ul > li:NTH-CHILD(1){
+	border-top: 1px solid rgba(0,0,0,.3);
+}
+
+#aside > ul > li > span{
+	font-size: 20px;
+	display: inline-block;
+	font-weight: bold;
+	margin-bottom: 26px;
+}
+
+ul.sub_ul{
+	margin-left:5px;
+}
+
+ul.sub_ul li{
+	margin-bottom: 30px;
+}
+
+ul.sub_ul  li a{
+	color:rgba(0,0,0,.4);
+}
+
+ul.sub_ul  li a:hover{
+	color:rgba(0,0,0,.8);
+}
+
+ul.sub_ul .fa{
+	margin-right: 3px;
+	color: rgba(50,50,50,.8);
+	font-size: 13px;
+}
+	
