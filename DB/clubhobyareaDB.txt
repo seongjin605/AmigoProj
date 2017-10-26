@@ -9,6 +9,7 @@ create table amigo_hobby(
   hobby varchar2(20) not null
 );
 
+create sequence amigo_club_seq;
 
 create table amigo_club(
   cnum number(8) primary key,
