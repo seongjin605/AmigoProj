@@ -20,7 +20,7 @@ create table amigo_club(
   carea number(7),
   choby number(3),
   CONSTRAINT area_fk FOREIGN KEY(carea) REFERENCES amigo_area(anum) ON DELETE CASCADE,
-  CONSTRAINT hoby_fk FOREIGN KEY(choby) REFERENCES amigo_hoby(hnum) ON DELETE CASCADE
+  CONSTRAINT hoby_fk FOREIGN KEY(choby) REFERENCES amigo_hobby(hnum) ON DELETE CASCADE
 );
 
 

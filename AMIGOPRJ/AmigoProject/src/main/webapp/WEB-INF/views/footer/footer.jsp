@@ -4,10 +4,10 @@
 <div id="footer">
 	<div class="fir-foot">
 		<ul class="first-foot">
-			<li><a href="footerInform.amg">개인정보 취급방침</a></li>
-			<li><a href="footerAgree.amg">이용약관</a></li>
-			<li><a href="footerEmail.amg">이메일무단수집거부</a></li>
-			<li><a href="footerLegal.amg">법적고지</a></li>
+			<li><a href="${location}/footerInform.amg">개인정보 취급방침</a></li>
+			<li><a href="${location}/footerAgree.amg">이용약관</a></li>
+			<li><a href="${location}/footerEmail.amg">이메일무단수집거부</a></li>
+			<li><a href="${location}/footerLegal.amg">법적고지</a></li>
 		</ul>
 	</div>
 	

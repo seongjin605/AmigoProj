@@ -30,6 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		// TODO Auto-generated method stub
 		MemberVO memberVo = memberService.selectMember(username);
 		
+		System.out.println("서비스가능?");
 		/*아이디가 맞는지 확인*/
 		if(memberVo == null)
 			throw new UsernameNotFoundException("유효하지 않은 아이디입니다");
@@ -43,6 +44,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		
 		/*권한을 맵핑한 최종 UserDetails 객체*/
 		memberVo.setAuthorities(authorities);
+		System.out.println("권한체크:"+memberVo.getAuthorities());
 		
 		return memberVo;
 	}

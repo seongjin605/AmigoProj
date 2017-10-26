@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,8 +20,15 @@ public class MemberController {
 	private MemberService service;
 
 	@RequestMapping("/login.amg")
-	public String login(HttpServletRequest request) {
-		request.getSession().setAttribute("prevpage", request.getHeader("referer"));
+	public String login(HttpServletRequest request,
+						Model model,
+						@RequestParam(value="state",defaultValue="success") String state) {
+		System.out.println("¸®ÆÛ:"+request.getHeader("referer"));
+		
+		model.addAttribute("state", state);
+		
+		if(state.equals("success"))
+			request.getSession().setAttribute("prevpage", request.getHeader("referer"));
 		return "login";
 	}
 	

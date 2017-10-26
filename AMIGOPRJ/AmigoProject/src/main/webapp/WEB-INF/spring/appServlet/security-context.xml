@@ -23,14 +23,18 @@
 			login-page="/member/login.amg"
 			login-processing-url="/member/login_process.amg"
 			always-use-default-target="true"
+			authentication-failure-url="/member/login.amg?state=fail"
 			authentication-success-handler-ref="LoginSuccessHandler"
 			username-parameter="mId"
 			password-parameter="mPwd"/>
 			
-			
-		
+		<logout delete-cookies="jsessionid" 
+               invalidate-session="true"
+               logout-url="/member/logOut.amg" 
+               logout-success-url="/member/login.amg"/>
+               
 		<session-management>
-			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" expired-url="/test"/>
+			<concurrency-control max-sessions="1"/>
 		</session-management>
 		<access-denied-handler/>
 	</http>
